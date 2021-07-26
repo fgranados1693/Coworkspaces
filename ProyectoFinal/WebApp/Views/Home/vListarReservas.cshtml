@@ -1,0 +1,33 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{
+    ViewBag.Title = "vListarReservas";
+}
+
+@section Dashboard {
+    <script src="~/Scripts/Views/vListarReservas.js"></script>
+    <link href="~/Content/Project_Styles/CustomDataTables.css" rel="stylesheet" />
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <h3>Reservas</h3>
+
+                <table class="display custom-table" id="tblReservas">
+                    <thead>
+                        <tr id="headers">
+                            <th>Espacio</th>
+                            <th>Fecha</th>
+                            <th>Hora inicio</th>
+                            <th>Hora finalización</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblBodyReservas"></tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+}

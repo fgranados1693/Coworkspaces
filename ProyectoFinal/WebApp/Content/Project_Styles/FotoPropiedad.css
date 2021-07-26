@@ -1,0 +1,13 @@
+﻿.class-img {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+
+#upload_widget {
+	margin-top: 1%;
+	width: 13%;
+	padding: 8px 17.6px;
+	align-content: center;
+}

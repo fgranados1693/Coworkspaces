@@ -1,0 +1,40 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{
+    ViewBag.Title = "vListarSolicitudes";
+}
+
+@section Dashboard {
+
+    <link href="~/Content/Project_Styles/CustomDataTables.css" rel="stylesheet" />
+
+    <!--Scripts-->
+    <script src="~/Scripts/Views/vListarSolicitudes.js"></script>
+    <!--Style sheets-->
+    <link href="~/Content/Project_Styles/RegistrarCaracteristicaEspacio.css" rel="stylesheet" />
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+
+                <h5>Listado de Solicitudes</h5>
+
+                <table class="display custom-table" id="tblSolicitudes">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Identificacion</th>
+                            <th>Correo electrónico</th>
+                            <th>Telefono</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblBodySolicitudes"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+}

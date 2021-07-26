@@ -1,0 +1,47 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/vRegistroUsuario.js"></script>
+@{ 
+    Layout = "~/Views/Shared/_LayoutForms.cshtml"; 
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <div>
+                <h5>Crea una nueva cuenta de Coworkspaces.</h5>
+                <h5>Paso 5</h5>
+            </div>
+            <form id="formReg" class="needs-validation">
+
+                @Html.CtrlInput(id: "Nombre", type: "text", label: "Nombre", columnDataName: "Nombre", placeHolder: "Ingresa tu nombre")
+                @Html.CtrlInput(id: "Apellidos", type: "text", label: "Apellidos", columnDataName: "Apellidos", placeHolder: "Ingresa tus apellidos")
+                @Html.CtrlInput(id: "Fecha_Nacimiento", type: "date", label: "Fecha de nacimiento", columnDataName: "Fecha_Nacimiento")
+
+                @Html.CtrlDropDown(id: "Genero", label: "Género", listId: "LST_GENERO", columnDataName: "Genero", placeHolder: "Selecciona tu género")
+                @Html.CtrlDropDown(id: "Tipo_Identificacion", label: "Tipo de identificación", listId: "LST_IDENTIFICACION", columnDataName: "Tipo_Identificacion", placeHolder: "Selecciona el tipo de identificación que deseas utilizar")
+
+                @Html.CtrlInput(id: "Identificacion", type: "text", label: "Identificación", columnDataName: "Identificacion", placeHolder: "Ingresa tu identificación")
+                @Html.CtrlInput(id: "Contrasenna", type: "password", label: "Contraseña", columnDataName: "Contrasenna", placeHolder: "Ingresa una nueva contraseña")
+                <small id="pwdFormat" class="form-text text-muted">La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una letra minúscula, un número y un caracter especial.</small>
+                @Html.CtrlInput(id: "Email", type: "text", label: "Correo electrónico", columnDataName: "Email")
+                @Html.CtrlInput(id: "Telefono", type: "text", label: "Teléfono", columnDataName: "Telefono")
+                @Html.CtrlDropDown(id: "Rol", label: "¿Que deseas hacer con Coworkspaces?", listId: "LST_ROL", columnDataName: "Rol", placeHolder: "Selecciona una opción")
+
+
+            </form>
+            <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                <p id="alert_message"></p>
+                <p id="alert_message_pwd"></p>
+            </div>
+            <div>
+                <p>Al registrar su cuenta acepta los <a href="vTerminosCondiciones" target="_blank">Términos y Condiciones </a> de la aplicación.</p>
+                
+            </div>
+            <div>
+                @Html.CtrlButton(viewName: "vRegistroUsuario", id: "btnCreate", label: "Enviar", onClickFunction: "Create", buttonType: "primary")
+            </div>
+        </div>
+    </div>
+</div>

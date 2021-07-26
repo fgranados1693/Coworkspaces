@@ -1,0 +1,42 @@
+﻿@using WebApp.Helpers;
+@{ Layout = "~/Views/Shared/_Layout.cshtml";}
+@{ ViewBag.Title = "vCalificarPropiedad"; }
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+
+@section Dashboard {
+
+
+    <script src="~/Scripts/Views/vCalificarPropiedad.js"></script>
+    <link href="~/Content/Project_Styles/vCalificarUsuario.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+   
+    <div class="container1">
+        <div class="text-center">
+            <h2>Calificación de propiedad</h2>
+            <h4>Describe tu experiencia</h4>
+        </div>
+       
+        <div class="star-widget">
+            <input type="radio" name="rate" id="rate_5">
+            <label for="rate_5" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate_4">
+            <label for="rate_4" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate_3">
+            <label for="rate_3" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate_2">
+            <label for="rate_2" class="fas fa-star"></label>
+            <input type="radio" name="rate" id="rate_1">
+            <label for="rate_1" class="fas fa-star"></label>
+            <form action="#">
+                <header></header>
+                        
+                <div class="btn">
+                    @Html.CtrlButton(viewName: "vCalificarPropiedad", id: "btnEnviar", label: "Enviar", onClickFunction: "Update", buttonType: "primary")
+                </div>
+            </form>
+        </div>
+    </div>
+
+}
+

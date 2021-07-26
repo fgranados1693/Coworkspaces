@@ -1,0 +1,82 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{
+    ViewBag.Title = "vPerfilUsuario";
+}
+
+@section Dashboard {
+    <script src="~/Scripts/Views/vPerfilUsuario.js"></script>
+    <!--Style sheets-->
+    <link href="~/Content/Project_Styles/PerfilUsuario.css" rel="stylesheet" />
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <h3>Mi perfil</h3>
+                <div class="circular--landscape">
+                    <img id="URL_Foto" />
+                </div>
+                <div id='calificacion'></div><br>
+
+                <table class="table">
+
+                    <tbody>
+
+                        <tr>
+                            <th scope="row">Nombre</th>
+                            <td id="Nombre"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Apellidos</th>
+                            <td id="Apellidos"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Correo electrónico</th>
+                            <td id="Email"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Teléfono</th>
+                            <td id="Telefono"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Identificación</th>
+                            <td id="Identificacion"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tipo de identificación</th>
+                            <td id="Tipo_Identificacion"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Fecha de nacimiento</th>
+                            <td id="Fecha_Nacimiento"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Género</th>
+                            <td id="Genero"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Saldo</th>
+                            <td><a>CRC </a><a id="Saldo"></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div>
+                    @Html.CtrlButton(viewName: "vPerfilUsuario", id: "btnMod", label: "Modificar", onClickFunction: "Mod", buttonType: "primary")
+                    @Html.CtrlButton(viewName: "vPerfilUsuario", id: "btnRecargar", label: "Recargar monedero", onClickFunction: "Recargar", buttonType: "primary")
+                    @Html.CtrlButton(viewName: "vPerfilUsuario", id: "btnModEmail", label: "Modificar correo electrónico", onClickFunction: "ModEmail", buttonType: "primary")
+                    @Html.CtrlButton(viewName: "vPerfilUsuario", id: "btnModTel", label: "Modificar teléfono", onClickFunction: "ModTel", buttonType: "primary")
+                    @Html.CtrlButton(viewName: "vPerfilUsuario", id: "btnFotoPerfil", label: "Subir foto perfil", onClickFunction: "SubirFotoPerfil", buttonType: "primary")
+                    @Html.CtrlButton(viewName: "vPerfilUsuario", id: "btnEliminarFotoPerfil", label: "Eliminar foto perfil", onClickFunction: "EliminarFotoPerfil", buttonType: "primary")
+
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+            <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+            <p id="alert_message"></p>
+            <p id="alert_message_foto"></p>
+        </div>
+    </div>
+
+}

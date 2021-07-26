@@ -1,0 +1,32 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{
+    ViewBag.Title = "vListarConversaciones";
+}
+
+@section Dashboard {
+    <script src="~/Scripts/Views/vListarConversaciones.js"></script>
+    <link href="~/Content/Project_Styles/CustomDataTables.css" rel="stylesheet" />
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <h3>Conversaciones</h3>
+
+                <table class="display custom-table" id="tblConv">
+                    <thead>
+                        <tr>
+                            <th>Usuario</th>
+                            <th></th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="tblBodyConv"></tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+}

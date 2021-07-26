@@ -1,0 +1,56 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{ ViewBag.Title = "vMantenimientoParametros"; }
+
+@section Dashboard {
+
+    <!--Scripts-->
+    <script src="~/Scripts/Views/vMantenimientoParametros.js"></script>
+
+    <!--Style sheets-->
+    <link href="~/Content/Project_Styles/MantenimientoParametros.css" rel="stylesheet" />
+
+    <!--Tabla-->
+    <div class="text-center">
+        <h2>Mantenimiento de parámetros del sistema</h2>
+    </div>
+    <div class="card border-secondary" style="margin-top: 50px;">
+        @Html.CtrlTable(viewName: "vMantenimientoParametros", id: "tblParametros", title: "Listado de parámetros",
+                columnsTitle: "Nombre,Valor", ColumnsDataName: "Nombre,Valor",
+                onSelectFunction: "BindFields", colorHeader: "red")
+    </div>
+
+    <div class="card border-secondary" style="margin-top: 50px;">
+        <div class="card-header">
+            <div class="row pull-right">
+                <div class="col-md-8">Edición Parámetros</div>
+                <div class="col-md-4">
+                    <!-- @Html.CtrlButton(viewName: "vMantenimientoParametros", id: "btnCreate", label: "Guardar", onClickFunction: "Create", buttonType: "success")-->
+                    @Html.CtrlButton(viewName: "vMantenimientoParametros", id: "btnUpdate", label: "Modificar", onClickFunction: "Update", buttonType: "info")
+                    <!-- @Html.CtrlButton(viewName: "vMantenimientoParametros", id: "btnDelete", label: "Eliminar", onClickFunction: "Delete", buttonType: "danger")-->
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="bs-component">
+                        <form id="frmEdition">
+                            @Html.CtrlInput(id: "IdParametro", type: "text", idLabel: "idParametro", label: "Id Parametro", columnDataName: "IdParametro")
+                            @Html.CtrlInput(id: "Valor", type: "text", idLabel: "idValor", label: "Valor", columnDataName: "Valor")
+                            @Html.CtrlDropDown(id: "Nombre", label: "Nombre", listId: "LST_VALOR_PARAMETRO", columnDataName: "Nombre", placeHolder: "Selecciona el tipo de parámetro")
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Alertas-->
+        <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+            <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+            <p id="alert_message"></p>
+            <p id="alert_message_num"></p>
+        </div>
+    </div>
+}

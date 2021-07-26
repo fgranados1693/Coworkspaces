@@ -1,0 +1,26 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/vIngresarEmail.js"></script>
+@{
+    Layout = "~/Views/Shared/_LayoutForms.cshtml";
+}
+
+<script src="~/Scripts/qrcode.min.js"></script>
+<script src="~/Scripts/Views/vEnviarQRTest.js"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <div>
+                <h5>Test enviar código QR.</h5>
+            </div>
+            <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                <span id="alert_message"></span>
+            </div>
+            <div>
+                @Html.CtrlButton(viewName: "vEnviarQRTest", id: "btnCreate", label: "Enviar", onClickFunction: "Create", buttonType: "primary")
+            </div>
+            <div id="qrCode"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+﻿
+@using WebApp.Helpers;
+@{ Layout = "~/Views/Shared/_Layout.cshtml";}
+@{ ViewBag.Title = "vMantenimientoCaracteristicasEspacio"; }
+
+@section Dashboard {
+
+
+    <script src="~/Scripts/Views/vMantenimientoCaracteristicasEspacio.js"></script>
+    <div class="text-center">
+        <h2>Mantenimiento de características de espacio</h2>
+    </div>
+    <div class="card border-secondary" style="margin-top: 50px;">
+        @Html.CtrlTable(viewName: "vMantenimientoCaracteristicasEspacio", id: "tblCaracteristicas", title: "Listado de caracteristicas del espacio",
+            columnsTitle: "Característica,Espacio,Nombre,Descripción", ColumnsDataName: "Id_Caracteristica,Id_Espacio,Nombre,Descripcion",
+            onSelectFunction: "BindFields", colorHeader: "red")
+    </div>
+    <div class="card border-secondary" style="margin-top: 50px;">
+        <div class="card-header">
+            <div class="row pull-right">
+                <div class="col-md-8">Edición de características de espacio</div>
+                <div class="col-md-4">
+                    @Html.CtrlButton(viewName: "vMantenimientoCaracteristicasEspacio", id: "btnCreate", label: "Guardar", onClickFunction: "Create", buttonType: "success")
+                    @Html.CtrlButton(viewName: "vMantenimientoCaracteristicasEspacio", id: "btnUpdate", label: "Modificar", onClickFunction: "Update", buttonType: "info")
+                    @Html.CtrlButton(viewName: "vMantenimientoCaracteristicasEspacio", id: "btnDelete", label: "Eliminar", onClickFunction: "Delete", buttonType: "danger")
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="bs-component">
+                        <form id="frmEdition">
+                            @Html.CtrlInput(id: "Id_Caracteristica", type: "text", label: "Característica", columnDataName: "Id_Caracteristica", idLabel: "lblCaracteristica")
+                            @Html.CtrlInput(id: "Id_Espacio", type: "text", label: "Espacio", columnDataName: "Id_Espacio", idLabel: "lblEspacio")
+                            @Html.CtrlInput(id: "Nombre", type: "text", label: "Nombre", columnDataName: "Nombre")
+                            @Html.CtrlInput(id: "Descripcion", type: "text", label: "Descripción", columnDataName: "Descripcion")
+                            
+
+                            @*  @Html.CtrlDropDown(id: "drpGender", label: "Gender", listId: "LST_GENERO")*@
+                            @* @Html.CtrlDropDown(id: "Best Friend", label: "Gender", listId: "LST_CUSTOMER")*@
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Alertas-->
+        <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+            <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+            <p id="alert_message"></p>
+            <p id="alert_message_pwd"></p>
+        </div>
+    </div>
+}

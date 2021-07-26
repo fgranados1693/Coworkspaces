@@ -1,0 +1,50 @@
+﻿@using WebApp.Helpers;
+@{ Layout = "~/Views/Shared/_Layout.cshtml";}
+@{ ViewBag.Title = "vBitacora"; }
+
+@section Dashboard {
+
+
+    <script src="~/Scripts/Views/vBitacora.js"></script>
+    <div class="text-center">
+        <h2>Bitácora</h2>
+    </div>
+    <div class="card border-secondary" style="margin-top: 50px;">
+        <div class="card-header">
+            <div class="row pull-right">
+
+
+            </div>
+
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="bs-component">
+                            <form id="frmEdition">
+                                @Html.CtrlInput(id: "fileBitacora", type: "file", label: "Seleccionar bitácora")
+                                @Html.CtrlButton(viewName: "vBitacora", id: "btnOpen", label: "Abrir", onClickFunction: "Abrir", buttonType: "info")
+                                @Html.CtrlButton(viewName: "vBitacora", id: "btnDownload", label: "Descargar", onClickFunction: "Descargar", buttonType: "info")
+
+
+                            </form>
+                            <a class="nav-link scrollto">
+                                @Html.ActionLink("Bitácoras", "vBitacora", "Home", new { @class = "nav-link" })
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <input type="file" multiple>
+    <br>
+    <select></select>
+    <br>
+<textarea></textarea>
+
+
+
+    
+}

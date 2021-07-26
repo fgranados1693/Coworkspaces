@@ -1,0 +1,40 @@
+﻿@using WebApp.Helpers;
+
+@{
+    Layout = "~/Views/Shared/_LayoutForms.cshtml";
+}
+@{
+    ViewBag.Title = "vModificarCaracteristicaEspacio";
+}
+<script src="~/Scripts/Views/vModificarCaracteristicaEspacio.js"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <div>
+                <h5>ModificarCaracteristicaEspacio</h5>
+            </div>
+
+            <form id="formMod" class="needs-validation">
+
+                @Html.CtrlInput(idLabel: "lblNombre", id: "Nombre", type: "text", label: "Nombre", columnDataName: "Nombre")
+
+                @Html.CtrlInput(idLabel: "lblDescripcion", id: "Descripcion", type: "text", label: "Descripcion", columnDataName: "Descripcion", placeHolder: "")
+
+                <div class="visually-hidden">
+                    @Html.CtrlInput(idLabel: "lblIdCaracteristica", id: "IdCaracteristica", type: "text", label: "IdCaracteristica", columnDataName: "IdCaracteristica")
+                </div>
+
+                <div class="visually-hidden">
+                    @Html.CtrlInput(idLabel: "lblIdEspacio", id: "IdEspacio", type: "text", label: "IdEspacio", columnDataName: "IdEspacio")
+                </div>
+
+            </form>
+
+            <div>
+                @Html.CtrlButton(viewName: "vModificarCaracteristicaEspacio", id: "btnMod", label: "Guardar cambios", onClickFunction: "Mod", buttonType: "primary")
+            </div>
+        </div>
+    </div>
+</div>
+

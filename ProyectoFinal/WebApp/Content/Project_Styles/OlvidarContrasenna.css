@@ -1,0 +1,49 @@
+﻿
+.cnt-principal {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    margin-top: 8%;
+    width: 100%;
+}
+
+p {
+    padding-top: 1%;
+    font-size: 18px;
+}
+.getstarted {
+    border: 2px solid #3498db;
+    background: #fff;
+    padding: 8px 25px;
+    font-size: 16px;
+    border-radius: 50px;
+    color: #3498db;
+}
+
+    .getstarted:hover {
+        color: #fff;
+        background: #4aa3df;
+    }
+.info-cnt {
+    display: block;
+    width: 100%;
+}
+.lbl-correo {
+    padding-top: 3%;
+    font-size: 16px;
+    font-weight: 600;
+}
+label {
+    display: block;
+    float: left;
+    width: 40%;
+}
+
+#input-correo {
+    width: 40%;
+}
+
+

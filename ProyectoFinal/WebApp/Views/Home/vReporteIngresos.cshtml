@@ -1,0 +1,49 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{ ViewBag.Title = "vReporteIngresos"; }
+
+@section Dashboard {
+
+    <link href="~/Content/Project_Styles/vReporteEspacios.css" rel="stylesheet" />
+    <script src="~/Scripts/Views/ControlActions.js"></script>
+    <script src="~/Scripts/Views/vReporteIngresos.js"></script>
+
+    <div class="container" onload="load()">
+        <div class="row">
+
+            <div class="col align-self-center div-chart div-registros">
+                <h4>Reporte de transacciones</h4>
+                @Html.CtrlChart("vReporteIngresos", "chartIngresos", "Totales", "'Membresias','Comisiones','Impuestos','Recargas','Egresos'", "bar", onLoadFunction: "GetDataToChartIngresos")
+            </div>
+            
+        </div>
+        <div class="row">
+
+            <div class="col align-self-center">
+                <div>
+                    <h4>Totales</h4>
+                    <table class="table">
+
+                        <tbody>
+                            <tr>
+                                <th scope="row">Ingresos totales</th>
+                                <td id="ingresosTotales">CRC </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Egresos totales</th>
+                                <td id="egresosTotales">CRC </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Ganancias totales</th>
+                                <td id="gananciasTotales">CRC </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+}

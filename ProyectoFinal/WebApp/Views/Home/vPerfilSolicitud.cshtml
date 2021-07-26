@@ -1,0 +1,124 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{
+    ViewBag.Title = "vPerfilSolicitud";
+}
+
+@section No_Dashboard {
+    <script src="~/Scripts/Views/vPerfilSolicitud.js"></script>
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <h3 id="FullName"></h3>
+
+                <table class="table">
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">Nombre</th>
+                            <td id="Nombre"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Apellidos</th>
+                            <td id="Apellidos"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Correo electrónico</th>
+                            <td id="Email"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Teléfono</th>
+                            <td id="Telefono"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Identificación</th>
+                            <td id="Identificacion"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tipo de identificación</th>
+                            <td id="Tipo_Identificacion"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Fecha de nacimiento</th>
+                            <td id="Fecha_Nacimiento"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Género</th>
+                            <td id="Genero"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Saldo</th>
+                            <td><a>CRC </a><a id="Saldo"></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <h3>Información de la propiedad</h3>
+
+                <table class="table">
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">Nombre</th>
+                            <td id="NombreP"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Descripción</th>
+                            <td id="DescripcionP"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <h4>Fotos</h4>
+            </div>
+        </div>
+        <div class="row" id="img-cont">
+            
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <h4>Lista de documentos</h4>
+
+                <table class="display custom-table" id="tblDocumentos">
+                    <thead>
+                        <tr>
+                            <th>Archivo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblBodyDocumentos"></tbody>
+                </table>
+            </div>
+            <div>
+                @Html.CtrlInput(id: "Comision", type: "number", label: "Comision", columnDataName: "Comision", placeHolder: "Ingresa la comision")
+            </div>
+            <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                <p id="alert_message"></p>
+                <p id="alert_message_pwd"></p>
+            </div>
+            <div>
+                @Html.CtrlButton(viewName: "vPerfilSolicitud", id: "btnAceptar", label: "Aceptar", onClickFunction: "Aceptar", buttonType: "primary")
+                @Html.CtrlButton(viewName: "vPerfilSolicitud", id: "btnRechazar", label: "Rechazar", onClickFunction: "Rechazar", buttonType: "primary")
+            </div>
+        </div>
+    </div>
+
+}

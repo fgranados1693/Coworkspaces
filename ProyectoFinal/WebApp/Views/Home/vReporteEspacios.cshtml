@@ -1,0 +1,44 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{ ViewBag.Title = "vReporteEspacios"; }
+
+@section Dashboard {
+
+    <link href="~/Content/Project_Styles/vReporteEspacios.css" rel="stylesheet" />
+    <script src="~/Scripts/Views/ControlActions.js"></script>
+    <script src="~/Scripts/Views/vReporteEspacios.js"></script>
+
+    <div class="container" onload="load()">
+        <div class="row">
+            <h3>Reporte de espacios</h3>
+            <div>
+                @Html.CtrlButton(viewName: "vReportes", id: "btnReporteEspacios", label: "Espacios vs Propiedades", onClickFunction: "ShowEspacios", buttonType: "primary")
+                @Html.CtrlButton(viewName: "vReportes", id: "btnReporteEspaciosReembolso", label: "Reembolso", onClickFunction: "ShowReembolso", buttonType: "primary")
+                @Html.CtrlButton(viewName: "vReportes", id: "btnReporteEspaciosCancelacion", label: "Cancelación", onClickFunction: "ShowCancelacion", buttonType: "primary")
+                @Html.CtrlButton(viewName: "vReportes", id: "btnReporteEspaciosCategorias", label: "Categorías más utilizadas", onClickFunction: "ShowCategorias", buttonType: "primary")
+                <br />
+            </div>
+            <div class="col align-self-center div-chart div-registros">
+                <h4>Espacios registrados</h4>
+                @Html.CtrlChart("vReporteEspacios", "chartRegistros", "Registros", "'Espacios registrados','Propiedades registradas'", "bar", onLoadFunction: "GetDataToChartRegistros")
+            </div>
+            <div class="col align-self-center div-chart div-reembolso">
+                <h4>Espacios por reembolso</h4>
+
+                @Html.CtrlChart("vReporteEspacios", "chartReembolso", "Permiten reembolso", "'Permiten reembolso','No permiten reembolso'", "bar", onLoadFunction: "GetDataToChartReembolso")
+            </div>
+            <div class="col align-self-center div-chart div-cancelacion">
+                <h4>Espacios por cancelación</h4>
+
+                @Html.CtrlChart("vReporteEspacios", "chartCancelacion", "Permiten cancelación", "'Permiten cancelar','No permiten cancelar'", "bar", onLoadFunction: "GetDataToChartCancelacion")
+            </div>
+            <div class="col align-self-center div-chart div-categorias">
+                <h4>Utilización de las categorías en los espacios</h4>
+
+                @Html.CtrlChartPie("vReporteEspacios", "chartCategorias", "Utilización de las categorías de los espacios", "'Salas de reuniones','Oficinas','Salas de entretenimiento','Cocina','Auditorios'", "pie", onLoadFunction: "GetDataToChartCategorias")
+            </div>
+        </div>
+    </div>
+
+}

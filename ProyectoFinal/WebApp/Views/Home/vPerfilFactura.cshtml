@@ -1,0 +1,66 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{
+    ViewBag.Title = "vPerfilFactura";
+}
+
+@section Dashboard {
+    <script src="~/Scripts/Views/vPerfilFactura.js"></script>
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <h3>Factura</h3>
+
+                <table class="table">
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">Detalle</th>
+                            <td></td>
+                            <td id="Detalle"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Fecha</th>
+                            <td></td>
+                            <td id="Fecha"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Nombre usuario</th>
+                            <td></td>
+                            <td id="Nombre_Usuario"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Lineas</th>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td id="transacciones"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Subtotal</th>
+                            <td></td>
+                            <td id="subtotal">CRC </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Impuestos</th>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td id="impuestos"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Total</th>
+                            <td></td>
+                            <td id="total">CRC </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+}

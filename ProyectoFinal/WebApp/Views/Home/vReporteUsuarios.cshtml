@@ -1,0 +1,26 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{ ViewBag.Title = "vReporteUsuarios"; }
+
+@section Dashboard {
+
+    <link href="~/Content/Project_Styles/vReporteEspacios.css" rel="stylesheet" />
+    <script src="~/Scripts/Views/ControlActions.js"></script>
+    <script src="~/Scripts/Views/vReporteUsuarios.js"></script>
+
+    <div class="container" onload="load()">
+        <div class="row">
+            <h3>Reporte de usuarios</h3>
+            <div>
+                <br />
+            </div>
+            <div class="col align-self-center div-chart div-registros">
+                <h4>Usuarios registrados</h4>
+                @Html.CtrlChart("vReporteUsuarios", "chartRegistros", "Usuarios", "'Administradores','Propietarios','Usuarios finales'", "bar", onLoadFunction: "GetDataToChartRegistros")
+            </div>
+           
+        </div>
+    </div>
+
+}

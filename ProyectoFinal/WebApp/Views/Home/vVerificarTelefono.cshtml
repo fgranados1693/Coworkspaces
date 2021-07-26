@@ -1,0 +1,29 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/vVerificarTelefono.js"></script>
+@{ 
+    Layout = "~/Views/Shared/_LayoutForms.cshtml"; 
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <div>
+                <h5>Crea una nueva cuenta de Coworkspaces.</h5>
+                <h5>Paso 4</h5>
+            </div>
+            <form id="formTelefono">
+
+                @Html.CtrlInput(id: "txtCodigo", type: "text", label: "Ingresa el código que se envió a tu número de teléfono", columnDataName: "codigo", placeHolder: "Código de verificación")
+
+            </form>
+            <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                <span id="alert_message"></span>
+            </div>
+            <div>
+                @Html.CtrlButton(viewName: "vVerificarTelefono", id: "btnCreate", label: "Enviar", onClickFunction: "Verify", buttonType: "primary")
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{
+    ViewBag.Title = "vConversacion";
+}
+
+@section Dashboard {
+    <script src="~/Scripts/Views/vConversacion.js"></script>
+    <link href="~/Content/Project_Styles/CustomDataTables.css" rel="stylesheet" />
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <h3 id="usuario"></h3>
+
+                <table class="display custom-table" id="tblConv">
+                    <tbody id="tblBodyConv"></tbody>
+                </table>
+
+                <form id="formMsg">
+                    @Html.CtrlInput(id: "texto", type: "text", label: "", columnDataName: "texto", placeHolder: "Escribe un mensaje")
+                </form>
+                <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                    <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                    <span id="alert_message"></span>
+                </div>
+                <div>
+                    @Html.CtrlButton(viewName: "vConversacion", id: "btnCreate", label: "Enviar", onClickFunction: "Create", buttonType: "primary")
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

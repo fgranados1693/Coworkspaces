@@ -1,0 +1,38 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/vModificarPerfilUsuario.js"></script>
+@{
+    Layout = "~/Views/Shared/_LayoutForms.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <div>
+                <h5>Modificar Perfil</h5>
+            </div>
+            <form id="formMod" class="needs-validation">
+
+                @Html.CtrlInput(id: "Nombre", type: "text", label: "Nombre", columnDataName: "Nombre")
+                @Html.CtrlInput(id: "Apellidos", type: "text", label: "Apellidos", columnDataName: "Apellidos")
+                @Html.CtrlInput(id: "Fecha_Nacimiento", type: "date", label: "Fecha de nacimiento", columnDataName: "Fecha_Nacimiento")
+
+                @Html.CtrlDropDown(id: "Genero", label: "Género", listId: "LST_GENERO", columnDataName: "Genero", placeHolder: "Seleccione una opción")
+                @Html.CtrlDropDown(id: "Tipo_Identificacion", label: "Tipo de identificación", listId: "LST_IDENTIFICACION", columnDataName: "Tipo_Identificacion", placeHolder: "Seleccione una opción")
+
+                @Html.CtrlInput(id: "Identificacion", type: "text", label: "Identificación", columnDataName: "Identificacion")
+                <div id="EstadoCont" class="visually-hidden">
+                    @Html.CtrlDropDown(id: "Estado", label: "Estado", listId: "LST_ESTADO_USUARIOS", columnDataName: "Estado", placeHolder: "Seleccione una opción")
+                </div>
+            </form>
+            <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                <p id="alert_message"></p>
+                <p id="alert_message_pwd"></p>
+            </div>
+            <div>
+                @Html.CtrlButton(viewName: "vModificarPerfilUsuario", id: "btnMod", label: "Guardar cambios", onClickFunction: "Mod", buttonType: "primary")
+            </div>
+        </div>
+    </div>
+</div>

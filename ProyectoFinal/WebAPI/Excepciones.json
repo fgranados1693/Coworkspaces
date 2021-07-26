@@ -1,0 +1,145 @@
+﻿[
+  {
+    "Id": 0,
+    "Message": "Ha ocurrido un error"
+  },
+  {
+    "Id": 1,
+    "Message": "No hay datos disponibles"
+  },
+  {
+    "Id": 2,
+    "Message": "La propiedad ya se encuentra registrada"
+  },
+  {
+    "Id": 3,
+    "Message": "La propiedad no existe"
+  },
+  {
+    "Id": 4,
+    "Message": "No existe ese crédito"
+  },
+  {
+    "Id": 5,
+    "Message": "Crédito ya existe en la base de datos"
+  },
+  {
+    "Id": 6,
+    "Message": "El usuario ya se encuentra registrado"
+  },
+  {
+    "Id": 7,
+    "Message": "Un usuario con la misma identificación ya se encuentra registrado"
+  },
+  {
+    "Id": 8,
+    "Message": "Un usuario con la misma dirección de correo electrónico ya se encuentra registrado"
+  },
+  {
+    "Id": 9,
+    "Message": "Un usuario con el mismo número de teléfono ya se encuentra registrado"
+  },
+  {
+    "Id": 10,
+    "Message": "El usuario debe ser mayor de edad"
+  },
+  {
+    "Id": 11,
+    "Message": "La misma dirección ya ha sido creada para un mismo cliente"
+  },
+  {
+    "Id": 12,
+    "Message": "Ya existe un espacio con el mismo nombre en la misma propiedad"
+  },
+  {
+    "Id": 13,
+    "Message": "El espacio no pudo ser registrado"
+  },
+  {
+    "Id": 14,
+    "Message": "No existe el espacio"
+  },
+  {
+    "Id": 15,
+    "Message": "El espacio ya se encuentra registrado"
+  },
+  {
+    "Id": 16,
+    "Message": "El horario ya se encuentra registrado"
+  },
+  {
+    "Id": 17,
+    "Message": "No existe el horario"
+  },
+  {
+    "Id": 18,
+    "Message": "La categoria ya se encuentra registrada"
+  },
+
+  {
+    "Id": 19,
+    "Message": "La categoria no existe"
+  },
+
+  {
+    "Id": 20,
+    "Message": "La categoria no pudo ser modificada"
+  },
+
+  {
+    "Id": 21,
+    "Message": "La categoria no pudo ser eliminada"
+  },
+  {
+    "Id": 22,
+    "Message": "El impuesto ya se encuentra registrado"
+  },
+  {
+    "Id": 23,
+    "Message": "No existe el impuesto"
+  },
+  {
+    "Id": 24,
+    "Message": "El usuario no existe"
+  },
+  {
+    "Id": 25,
+    "Message": "El parametro ya se encuentra registrado"
+  },
+  {
+    "Id": 26,
+    "Message": "La contraseña no puede ser igual a ninguna de sus últimas cinco contraseñas"
+  },
+  {
+    "Id": 27,
+    "Message": "La relación de documento espacio no pudo ser registrada"
+  },
+  {
+    "Id": 28,
+    "Message": "No existe la relación de documento espacio"
+  },
+  {
+    "Id": 29,
+    "Message": "La relación de documento espacio ya se encuentra registrada"
+  },
+  {
+    "Id": 30,
+    "Message": "El documento ya se encuentra registrado"
+  },
+  {
+    "Id": 31,
+    "Message": "El documento no existe"
+  },
+  {
+    "Id": 32,
+    "Message": "Este usuario ya tiene una solicitud pendiente"
+  },
+  {
+    "Id": 33,
+    "Message": "La reservación ya se encuentra registrada"
+  },
+  {
+    "Id": 34,
+    "Message": "No existe la reservacion"
+  }
+]

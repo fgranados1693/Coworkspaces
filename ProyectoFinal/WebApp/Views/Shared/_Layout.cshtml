@@ -1,0 +1,448 @@
+﻿@using WebApp.Helpers;
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Coworkspaces</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/ce7d69f6cc.js" crossorigin="anonymous"></script>
+    <!-- Favicons
+    <link href="~/Content/Landing_Config/img/favicon.png" rel="icon">
+    <link href="~/Content/Landing_Config/img/apple-touch-icon.png" rel="apple-touch-icon">
+     -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/Content/Landing_Config/vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/Content/Landing_Config/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/Landing_Config/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Content/Landing_Config/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/Content/Landing_Config/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/Content/Landing_Config/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/Content/Landing_Config/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <link href="~/Content/jquery.dataTables.min.css" rel="stylesheet">
+
+
+    <!-- Template Main CSS File -->
+    <link href="~/Content/Landing_Config/css/style.css" rel="stylesheet">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    <link href="~/Content/Project_Styles/vEspacios.css" rel="stylesheet" />
+
+    <link href="~/Content/Project_Styles/Layout.css" rel="stylesheet" />
+    <link href="~/Content/Project_Styles/CustomDataTables.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="~/Scripts/Views/ControlActions.js"></script>
+    <script src="~/Scripts/Views/Main.js"></script>
+
+
+    <!-- =======================================================
+    * Template Name: Vesperr - v4.0.1
+    * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body onload="load()">
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo">
+                <h1>
+                    <a class="nav-link scrollto">
+                        @Html.ActionLink("Coworkspaces", "Index", "Home", new { @class = "nav-link" })
+                    </a>
+                </h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <!--class="nav navbar-nav ml-auto"-->
+                <ul>
+                    <li>
+                        <a class="nav-link scrollto">
+                            @Html.ActionLink("Inicio", "Index", "Home", new { @class = "nav-link" })
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link scrollto">
+                            @Html.ActionLink("Espacios", "vEspacios", "Home", new { @class = "nav-link" })
+                        </a>
+                    </li>
+
+                    <!--
+                    <li class="btn-navbar">
+                        @Html.CtrlButton(viewName: "vIngresarEmail", id: "btnRegistrarse", label: "Registrarse", onClickFunction: "vIngresarEmail", buttonType: "info")
+                    </li>
+                    <li class="btn-navbar">
+                        @Html.CtrlButton(viewName: "vIniciarSesion", id: "btnIniciarSesion", label: "Iniciar sesión", onClickFunction: "vIniciarSesion", buttonType: "info")
+                    </li>
+                        -->
+                    <!---->
+
+                    <li>
+                        <a>
+                            @Html.ActionLink("Iniciar sesión", "vIniciarSesion", "Home", new { @class = "nav-link getstarted", @id = "btn-iniciar-sesion" })
+                        </a>
+                    </li>
+                    <li class="visually-hidden" id="pefilCont">
+                        <a>
+                            @Html.ActionLink("Perfil", "vPerfilUsuario", "Home", new { @class = "nav-link getstarted", @id = "btn-perfil" })
+                        </a>
+                    </li>
+                    <li class="visually-hidden" id="regCont">
+                        <a>
+                            @Html.ActionLink("Registrarse", "vIngresarEmail", "Home", new { @class = "nav-link getstarted", @id = "btn-registrarse" })
+                        </a>
+                    </li>
+
+                    <!---------CARRITO---------->
+                    <li id="cnt-carrito">
+                        <button id="carrito-btn">
+                            <i class="bi bi-cart carrito" id="carrito-icon">
+                                <span id="contador-carrito">
+
+                                </span>
+                            </i>
+                        </button>
+                        <!--
+                        <a class="bi bi-cart nav-link scrollto carrito" id="carrito">
+                                                    <span id="contador-carrito">
+                                                        0
+                                                    </span>
+                                                </a>
+                            -->
+
+
+                    </li>
+
+                </ul>
+
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="ctn-close">
+                            <span class="close">&times;</span>
+                        </div>
+
+                        <!-- Cart -->
+                        <div class="cnt-table-carrito">
+                            <div>
+                                <h3 class="title">Carrito de reservas</h3>
+                            </div>
+                            <div>
+
+                                <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                                    <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                                    <span id="alert_message"></span>
+                                </div>
+
+                                <div class="">
+                                    <table class="table table-responsive" id="tblCarrito">
+                                        <thead>
+                                            <tr>
+                                                <th>Espacio</th>
+                                                <th>Fecha</th>
+                                                <th>Hora Entrada</th>
+                                                <th>Hora Salida</th>
+                                                <th>Subtotal</th>
+                                                <th></th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tblBodyCarrito"></tbody>
+                                    </table>
+
+                                </div>
+                                <div class="cnt-inferior-tabla-carrito">
+                                    <span id="cnt-total-carrito"><b>Total: </b><span id="total-carrito"></span></span>
+                                    <button type="button" class="btn btn-primary" id="btn-checkout">Finalizar compra<i class="fa fa-arrow-circle-right" id="icon-btn-checkout"></i></button>
+                                </div>
+                                <div class="cnt-inferior-tabla-carrito">
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- End Cart -->
+
+
+                    </div>
+
+                </div>
+                <!---------FIN CARRITO---------->
+                <i class="bi bi-list mobile-nav-toggle"></i>
+
+            </nav>
+
+
+            <!--
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                    <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+                    <li><a class="nav-link scrollto" href="#team">Team</a></li>
+                    <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
+                    <li class="dropdown">
+                        <a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="#">Drop Down 1</a></li>
+                            <li class="dropdown">
+                                <a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                                <ul>
+                                    <li><a href="#">Deep Drop Down 1</a></li>
+                                    <li><a href="#">Deep Drop Down 2</a></li>
+                                    <li><a href="#">Deep Drop Down 3</a></li>
+                                    <li><a href="#">Deep Drop Down 4</a></li>
+                                    <li><a href="#">Deep Drop Down 5</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Drop Down 2</a></li>
+                            <li><a href="#">Drop Down 3</a></li>
+                            <li><a href="#">Drop Down 4</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                    <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+
+
+    @if (IsSectionDefined("Dashboard"))
+    {
+        <!--PONER ESTO EN LAS PAGINAS QUE LLEVEN DASHBOARD
+            @section Dashboard {
+
+            LO QUE VAYA DE HTML
+
+        }
+            -->
+        <div class="cnt">
+            <div class="cnt-left visually-hidden " id="dash-admin">
+                <div class="dash-link-cnt">
+                    <i class="fas fa-home icon-dash"></i>
+                    @Html.ActionLink("Mi perfil", "vPerfilUsuario", "Home", new { @class = "nav-link link-dash" })
+                </div>
+                <div class="dash-link-cnt">
+                    <i class="fas fa-lock icon-dash"></i>
+                    @Html.ActionLink("Cambiar contraseña", "vCambiarContrasenna", "Home", new { @class = "nav-link link-dash" })
+                </div>
+                <div class="dash-link-cnt">
+                    <i class="fas fa-envelope icon-dash"></i>
+                    @Html.ActionLink("Solicitudes", "vListarSolicitudes", "Home", new { @class = "nav-link link-dash", @id = "dash-solicitudes" })
+                </div>
+                <div class="dash-link-cnt">
+                    <i class="fas fa-users icon-dash"></i>
+                    @Html.ActionLink("Usuarios", "vListarUsuarios", "Home", new { @class = "nav-link link-dash", @id = "dash-usuarios" })
+                </div>
+                <div class="dash-link-cnt">
+                    <i class="fas fa-building icon-dash"></i>
+                    @Html.ActionLink("Propiedades", "vMantenimientoPropiedades", "Home", new { @class = "nav-link link-dash" })
+                </div>
+                <div class="dash-link-cnt">
+                    <i class="fas fa-toolbox icon-dash"></i>
+                    @Html.ActionLink("Espacios", "vMantenimientoEspacios", "Home", new { @class = "nav-link link-dash" })
+                </div>
+                <div class="dash-link-cnt">
+                    <i class="fas fa-comment icon-dash"></i>
+                    @Html.ActionLink("Conversaciones", "vListarConversaciones", "Home", new { @class = "nav-link link-dash" })
+                </div>
+                <div class="dash-link-cnt">
+                    <i class="fas fa-cogs icon-dash"></i>
+                    @Html.ActionLink("Configuración", "vMantenimientoParametros", "Home", new { @class = "nav-link link-dash", @id = "dash-configuracion" })
+                </div>
+                <div class="dash-link-cnt">
+                    <i class="fas fa-percentage"></i>
+                    @Html.ActionLink("Impuestos", "vMantenimientoImpuestos", "Home", new { @class = "nav-link link-dash", @id = "dash-impuestos" })
+                </div>
+                <div class="dash-link-cnt">
+                    <i class="fas fa-file-alt icon-dash"></i>
+                    @Html.ActionLink("Facturas", "vListarFacturas", "Home", new { @class = "nav-link link-dash" })
+                </div>
+                <div class="dash-link-cnt">
+                    <i class="fas fa-chart-area icon-dash"></i>
+                    @Html.ActionLink("Reportes", "vReportes", "Home", new { @class = "nav-link link-dash" })
+                </div>
+                <div class="dash-link-cnt">
+                    <i class="fab fa-buffer icon-dash"></i>
+                    @Html.ActionLink("Categorías", "vMantenimientoCategorias", "Home", new { @class = "nav-link link-dash", @id = "dash-categorias" })
+                </div>
+                <div class="dash-link-cnt">
+                    <i class="fas fa-paste icon-dash"></i>
+                    @Html.ActionLink("Bitácora de actividad", "vBitacora", "Home", new { @class = "nav-link link-dash" })
+                </div>
+
+            </div>
+
+    <div class="cnt-left visually-hidden" id="dash-prop">
+        <div class="dash-link-cnt">
+            <i class="fas fa-home icon-dash"></i>
+            @Html.ActionLink("Mi perfil", "vPerfilUsuario", "Home", new { @class = "nav-link link-dash" })
+        </div>
+        <div class="dash-link-cnt">
+            <i class="fas fa-lock icon-dash"></i>
+            @Html.ActionLink("Cambiar contraseña", "vCambiarContrasenna", "Home", new { @class = "nav-link link-dash" })
+        </div>
+        <div class="dash-link-cnt">
+            <i class="fas fa-building icon-dash"></i>
+            @Html.ActionLink("Propiedades", "vMantenimientoPropiedades", "Home", new { @class = "nav-link link-dash" })
+        </div>
+        <div class="dash-link-cnt">
+            <i class="fas fa-toolbox icon-dash"></i>
+            @Html.ActionLink("Espacios", "vMantenimientoEspacios", "Home", new { @class = "nav-link link-dash" })
+        </div>
+        <div class="dash-link-cnt">
+            <i class="fas fa-building icon-dash"></i>
+            @Html.ActionLink("Reservas", "vListarReservas", "Home", new { @class = "nav-link link-dash" })
+        </div>
+        <div class="dash-link-cnt">
+            <i class="fas fa-comment icon-dash"></i>
+            @Html.ActionLink("Conversaciones", "vListarConversaciones", "Home", new { @class = "nav-link link-dash" })
+        </div>
+        <div class="dash-link-cnt">
+            <i class="fas fa-file-alt icon-dash"></i>
+            @Html.ActionLink("Facturas", "vListarFacturas", "Home", new { @class = "nav-link link-dash" })
+        </div>
+        <div class="dash-link-cnt">
+            <i class="fas fa-chart-area icon-dash"></i>
+            @Html.ActionLink("Reportes", "vReporteIngresosPropietario", "Home", new { @class = "nav-link link-dash" })
+        </div>
+    </div>
+
+    <div class="cnt-left visually-hidden" id="dash-final">
+        <div class="dash-link-cnt">
+            <i class="fas fa-home icon-dash"></i>
+            @Html.ActionLink("Mi perfil", "vPerfilUsuario", "Home", new { @class = "nav-link link-dash" })
+        </div>
+        <div class="dash-link-cnt">
+            <i class="fas fa-lock icon-dash"></i>
+            @Html.ActionLink("Cambiar contraseña", "vCambiarContrasenna", "Home", new { @class = "nav-link link-dash" })
+        </div>
+        <div class="dash-link-cnt">
+            <i class="fas fa-building icon-dash"></i>
+            @Html.ActionLink("Reservas", "vListarReservas", "Home", new { @class = "nav-link link-dash" })
+        </div>
+        <div class="dash-link-cnt">
+            <i class="fas fa-comment icon-dash"></i>
+            @Html.ActionLink("Conversaciones", "vListarConversaciones", "Home", new { @class = "nav-link link-dash" })
+        </div>
+        <div class="dash-link-cnt">
+            <i class="fas fa-file-alt icon-dash"></i>
+            @Html.ActionLink("Facturas", "vListarFacturas", "Home", new { @class = "nav-link link-dash" })
+        </div>
+    </div>
+
+
+            <div class="cnt-right">
+                @RenderSection("Dashboard", required: false)
+            </div>
+        </div>
+
+    }
+
+    @if (IsSectionDefined("No_Dashboard"))
+    {
+        @RenderSection("No_Dashboard", required: false)
+    }
+
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+
+                <div class="col-lg-6 text-lg-left">
+                    <nav class="footer-links pt-2 pt-lg-0">
+
+                        <h3>
+                            <a class="nav-link scrollto">
+                                @Html.ActionLink("Coworkspaces", "Index", "Home", new { @class = "nav-link" })
+                            </a>
+                        </h3>
+                    </nav>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+
+                        <a class="scrollto" href="#">
+                            <i class="fab fa-instagram fa-lg"></i>
+
+                        </a>
+                        <a class="scrollto" href="#">
+                            <i class="fab fa-facebook-square fa-lg"></i>
+
+                        </a>
+                        <a class="scrollto" href="#">
+                            <i class="fab fa-twitter-square fa-lg"></i>
+
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    
+
+
+
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="~/Content/Landing_Config/vendor/aos/aos.js"></script>
+    <script src="~/Content/Landing_Config/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/Landing_Config/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/Content/Landing_Config/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="~/Content/Landing_Config/vendor/php-email-form/validate.js"></script>
+    <script src="~/Content/Landing_Config/vendor/purecounter/purecounter.js"></script>
+    <script src="~/Content/Landing_Config/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/Content/Landing_Config/js/main.js"></script>
+
+
+    <script src="~/Scripts/Views/CerrarSesion.js"></script>
+
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/Views/ValidacionRoles.js"></script>
+
+    <script src="~/Scripts/Views/vEspacios.js"></script>
+
+
+
+
+</body>
+
+</html>
+
+<!--<div class="col-lg-6 text-lg-left text-center">
+    <div class="copyright">
+        &copy; Copyright <strong>App</strong>. Todos los derechos reservados
+    </div>
+    <div class="credits">-->
+        <!-- All the links in the footer should remain intact. 
+     You can delete the links only if you purchased the pro version. 
+     Licensing information: https://bootstrapmade.com/license/ 
+     Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/vesperr-free-bootstrap-template/ -->
+    <!--Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+</div>-->

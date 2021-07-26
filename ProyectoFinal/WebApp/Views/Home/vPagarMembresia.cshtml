@@ -1,0 +1,47 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/vPagarMembresia.js"></script>
+@{
+    Layout = "~/Views/Shared/_LayoutForms.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <div>
+                <h5>Pago de membresía</h5>
+                <h4 id="saldo">Tu saldo: CRC </h4>
+                <table class="table">
+                    
+                    <tbody>
+                        <tr>
+                            <th scope="row">Subtotal</th>
+                            <td id="subtotal">CRC </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Impuestos</th>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td id="impuestos"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Total</th>
+                            <td id="total">CRC </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                <span id="alert_message"></span>
+            </div>
+            <div>
+                @Html.CtrlButton(viewName: "vPagarMembresia", id: "btnPagar", label: "Completar pago", onClickFunction: "Pagar", buttonType: "primary")
+                @Html.CtrlButton(viewName: "vPagarMembresia", id: "btnRecargar", label: "Recargar monedero", onClickFunction: "Recargar", buttonType: "primary")
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+﻿@using WebApp.Helpers;
+<script src="https://www.paypal.com/sdk/js?client-id=AR1DCPQxd16_NpCapUeqgyHzG4A137G1t2q3yJsxG5KouWZI-tbYWwouDIdrG1D2gqsfV9g3ZVT8Fohq"></script>
+<script src="~/Scripts/Views/vRecargarMonedero.js"></script>
+@{
+    Layout = "~/Views/Shared/_LayoutForms.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <div>
+                <h5>Recargar monedero</h5>
+                <h4 id="saldoActual">Tu saldo: CRC </h4>
+                <form id="formReg" class="needs-validation">
+
+                    @Html.CtrlInput(id: "Saldo", type: "number", label: "Monto CRC", columnDataName: "Saldo", placeHolder: "Ingresa el monto que deseas recargar")
+                    @Html.CtrlDropDown(id: "Pago", label: "Método de pago", listId: "LST_PAGOS", columnDataName: "Pago", placeHolder: "Selecciona un método de pago")
+
+                </form>
+                <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                    <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                    <p id="alert_message"></p>
+                    <p id="alert_message_pwd"></p>
+                </div>
+                <div>
+                    <div id="sinpe-button-container" class="visually-hidden">
+                        @Html.CtrlButton(viewName: "vRecargarMonedero", id: "btnSINPE", label: "Recargar", onClickFunction: "SINPE", buttonType: "primary")
+                    </div>
+                    <div id="paypal-button-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

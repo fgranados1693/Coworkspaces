@@ -1,0 +1,121 @@
+﻿@using WebApp.Helpers;
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Iniciar sesión</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js" integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+    <script src="~/Scripts/Views/ControlActions.js"></script>
+    <script src="~/Scripts/Views/MD5.js"></script>
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!--FONTS-->
+    <link href="~/Content/Project_Styles/IniciarSesion.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Landing_Config/css/style.css" rel="stylesheet">
+
+
+
+</head>
+
+<body onload="init()">
+    <div class="cnt">
+        <div class="cnt-left">
+
+        </div>
+
+        <div class="cnt-right">
+
+        </div>
+        <div class="mid">
+            <div class="mid-cnt-left">
+
+                <a class="logo-login">
+                    @Html.ActionLink("Coworkspaces", "Index", "Home", new { @class = "logo-login" })
+                </a>
+                <p id="logo-description">La mejor aplicación para reservar espacios de trabajo!</p>
+
+            </div>
+
+            <div class="mid-cnt-right">
+                <h1 id="h1-login">Iniciar sesión</h1>
+                <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                    <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                    <span id="alert_message"></span>
+                </div>
+
+                <label class="top-data lbl-login">Correo</label>
+                <input type="email" class="top-data" id="input-correo" placeholder="correo@gmail.com" required />
+
+                <label class="bottom-data lbl-login">Contraseña</label>
+                <input type="password" class="bottom-data" id="input-contrasenna" placeholder="Contraseña" required />
+
+                @Html.ActionLink("¿Olvidaste tu contraseña?", "OlvidarContrasenna", "Home", new
+                {
+                    @class = "link-info",
+               @id = "link-olvidar-contrasenna"
+           })
+
+                @Html.ActionLink("Ingresar", "vPerfilUsuario", "Home", new
+                {
+                    @class = "getstarted",
+               @id = "link-ingresar"
+                })
+
+
+
+                <hr>
+
+                <h4 id="hd-cuenta">¿No tienes cuenta?</h4>
+
+                @Html.ActionLink("Registrarse", "vIngresarEmail", "Home", new { @class = "getstarted" })
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <!--
+    <div class="cnt back-main-cnt cnt-left">
+        <h2>Derecha</h2>
+
+        <div class="back-cnt back-cnt-left ">
+            <h2>Child 1</h2>
+        </div>
+
+        <div class="back-cnt back-cnt-right ">
+            <h2>Child 1</h2>
+        </div>
+
+        <div class="middle-cnt">
+            <div><p>Hola</p></div>
+        </div>
+
+
+    </div>
+
+    <div class="cnt cnt-right ">
+        <h2>Izq</h2>
+    </div>
+        -->
+
+
+    <script src="~/Scripts/Views/vIniciarSesion.js"></script>
+</body>
+
+
+</html>
+

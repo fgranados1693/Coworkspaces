@@ -1,0 +1,67 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_LayoutIndex.cshtml"; }
+
+@{
+    ViewBag.Title = "vPerfilPropiedadPublico";
+}
+@section No_Dashboard{
+    <!--Scripts-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtK55zgCHZ0oTUvAs7zAvj-sRcM4yMBY4&callback=initMap&libraries=&v=weekly"
+            async></script>
+    <script src="~/Scripts/Views/vPerfilPropiedadPublico.js"></script>
+    <!---Style sheets-->
+    <link href="~/Content/Project_Styles/PerfilPropiedad.css" rel="stylesheet" />
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div id="titulo">
+                    <div style="margin-bottom: 50px;">
+                        <h2 id="Nombre"></h2>
+                        <h4><a id="propietario" href="#" style="text-decoration:none"></a></h4>
+                    </div>
+                </div>
+
+                <div id='calificacion'>
+                    <h5>Calificación</h5>
+                </div>
+
+                <section class="section-ver">
+
+                    <div class="ver-cards">
+
+                        <div id="lista_fotos" class="ver-cards-container">
+
+                        </div>
+                    </div>
+
+                </section>
+
+                <div class="descripcionPropiedad">
+                    <p id="Descripcion"><p />
+                </div>
+
+                <h3>Espacios</h3>
+
+                <table class="display custom-table" id="tblEspacios">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblBodyEspacios"></tbody>
+                </table>
+
+                <div id="contenedorMapa">
+                    <h2 class="text-center">Ubicación de la propiedad</h2>
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+}

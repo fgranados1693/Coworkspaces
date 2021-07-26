@@ -1,0 +1,52 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{ ViewBag.Title = "vMantenimientoPropiedades"; }
+
+@section Dashboard {
+
+    <!--Scripts-->
+    <script src="~/Scripts/Views/vMantenimientoPropiedades.js"></script>
+    <script src="~/Scripts/Views/MapConfiguration.js"></script>
+    <script src="~/Scripts/Views/vRegistrarPropiedad.js"></script>
+    <!--Style sheets-->
+    <link href="~/Content/Project_Styles/RegistrarPropiedad.css" rel="stylesheet" />
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <h3>Propiedades</h3>
+
+
+                <table class="display custom-table" id="tblPropiedades">
+                    <thead>
+                        <tr>
+                            <th>Propietario</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Estado</th>
+                            <th>Editar</th>
+                            <th>Aduntar foto</th>
+                            <th>Adjuntar documento</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblBodyPropiedades"></tbody>
+                </table>
+
+                <div class="visually-hidden" id="registroPropiedadPropietario">
+                    @Html.CtrlButton(viewName: "vMantenimientoPropiedades", id: "btnCre", label: "Nueva propiedad", onClickFunction: "NuevaPropiedad", buttonType: "primary")
+                </div>
+
+                <div class="visually-hidden" id="registroPropiedadAdmin">
+                    @Html.CtrlButton(viewName: "vMantenimientoPropiedades", id: "btnCrearAdmin", label: "Nueva propiedad", onClickFunction: "NuevaPropiedadAdmin", buttonType: "primary")
+                </div>
+            </div>
+            <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                <p id="alert_message"></p>
+                <p id="alert_message_pwd"></p>
+            </div>
+        </div>
+    </div>
+
+}

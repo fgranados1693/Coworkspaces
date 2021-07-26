@@ -1,0 +1,53 @@
+﻿@using WebApp.Helpers;
+
+<!--Scripts-->
+<script src="~/Scripts/Views/RegistrarCaracteristicaEspacio.js"></script>
+<!--Style sheets-->
+<link href="~/Content/Project_Styles/RegistrarCaracteristicaEspacio.css" rel="stylesheet" />
+
+@{ Layout = "~/Views/Shared/_LayoutForms.cshtml"; }
+
+@{
+    ViewBag.Title = "vRegistrarCaracteristicaEspacio";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+
+            <div>
+                <h5>Registro de nueva caracteristica de espacio</h5>
+            </div>
+
+            <form id="formCaracteristicaEspacio" class="needs-validation">
+
+                <div>
+                    <label>Seleccione el espacio en el que desea crear la caracteristica</label><br>
+                    <select name="espacios" id="Id_Espacio" columnDataName="Id_Espacio" required>
+                        <option value="" selected>Seleccione el espacio</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Seleccione el tipo de caracteristica de espacio que desea crear</label><br>
+                    <select name="Nombre" id="Nombre" columnDataName="Nombre" required>
+                        <option value="" selected>Seleccione la caracteristica de espacio</option>
+                        <option value="Restriccion">Restriccion</option>
+                        <option value="Servicio">Servicio</option>
+                    </select>
+                </div>
+
+                @Html.CtrlInput(idLabel: "lblDescripcion", id: "Descripcion", type: "text", label: "Descripcion", columnDataName: "Descripcion", placeHolder: "")
+
+            </form>
+
+            <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                <p id="alert_message"></p>
+            </div>
+
+            <div>
+                @Html.CtrlButton(viewName: "vRegistrarCaracteristicaEspacio", id: "btnEnviar", label: "Registrar", onClickFunction: "EnviarDatos", buttonType: "primary")
+            </div>
+        </div>
+    </div>
+</div>

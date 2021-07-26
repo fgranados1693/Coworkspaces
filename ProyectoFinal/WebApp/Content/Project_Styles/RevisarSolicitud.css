@@ -1,0 +1,38 @@
+﻿#inside {
+    margin-left: 25%;
+    align-items: center;
+}
+
+#p {
+    display: none;
+}
+
+#button {
+    margin-left: 70%;
+    align-items: center;
+}
+
+#textos {
+    width: 100%;
+}
+
+#part2 {
+    width: 50%;
+}
+input {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+}
+
+#email {
+    border-left-width: 0px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+}

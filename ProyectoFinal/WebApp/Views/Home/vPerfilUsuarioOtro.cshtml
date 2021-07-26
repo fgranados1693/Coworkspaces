@@ -1,0 +1,95 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{
+    ViewBag.Title = "vPerfilUsuarioOtro";
+}
+
+@section No_Dashboard {
+    <script src="~/Scripts/Views/vPerfilUsuarioOtro.js"></script>
+    <script src="~/Scripts/Views/CalificacionUsuarios.js"></script>
+    <link href="~/Content/Project_Styles/PerfilUsuario.css" rel="stylesheet" />
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <div class="circular--landscape">
+                    <img id="URL_Foto" />
+                </div>
+                <h3 id="FullName"></h3>
+                <div id='calificacion'></div><br>
+                <table class="table">
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">Nombre</th>
+                            <td id="Nombre"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Apellidos</th>
+                            <td id="Apellidos"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Correo electrónico</th>
+                            <td id="Email"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Teléfono</th>
+                            <td id="Telefono"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Identificación</th>
+                            <td id="Identificacion"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tipo de identificación</th>
+                            <td id="Tipo_Identificacion"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Fecha de nacimiento</th>
+                            <td id="Fecha_Nacimiento"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Género</th>
+                            <td id="Genero"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Saldo</th>
+                            <td><a>CRC </a><a id="Saldo"></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container visually-hidden" id="prop-cont">
+        <div class="row">
+            <div class="col align-self-center">
+                <h3>Propiedades</h3>
+
+                <table class="display custom-table" id="tblPropiedades">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblBodyPropiedades"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <div>
+                    @Html.CtrlButton(viewName: "vPerfilUsuarioOtro", id: "btnMod", label: "Modificar", onClickFunction: "Mod", buttonType: "primary")
+                    @Html.CtrlButton(viewName: "vPerfilUsuarioOtro", id: "btnModEmail", label: "Modificar correo electrónico", onClickFunction: "ModEmail", buttonType: "primary")
+                    @Html.CtrlButton(viewName: "vPerfilUsuarioOtro", id: "btnModTel", label: "Modificar teléfono", onClickFunction: "ModTel", buttonType: "primary")
+                    @Html.CtrlButton(viewName: "vPerfilUsuarioOtro", id: "btnMsg", label: "Enviar mensaje", onClickFunction: "Msg", buttonType: "primary")
+                    @Html.CtrlButton(viewName: "vPerfilUsuarioOtro", id: "btnModCom", label: "Modificar comisión", onClickFunction: "ModCom", buttonType: "primary")
+                </div>
+            </div>
+        </div>
+    </div>
+}

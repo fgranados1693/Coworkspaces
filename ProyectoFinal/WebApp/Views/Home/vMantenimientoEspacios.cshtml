@@ -1,0 +1,52 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{
+    ViewBag.Title = "vMantenimientoEspacios";
+}
+
+@section Dashboard {
+    <script src="~/Scripts/Views/vMantenimientoEspacios.js"></script>
+    <link href="~/Content/Project_Styles/CustomDataTables.css" rel="stylesheet" />
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <h3>Espacios</h3>
+                <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                    <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                    <span id="alert_message"></span>
+                </div>
+                @*@Html.CtrlTable(viewName: "vListarUsuarios", id: "tblUsuarios", title: "Listado de usuarios",
+        columnsTitle: "Nombre,Apellidos,Email,Telefono,Genero,Estado", ColumnsDataName: "Nombre,Apellidos,Email,Telefono,Genero,Estado",
+        onSelectFunction: "BindFields", colorHeader: "red")*@
+
+                <table class="display custom-table" id="tblEspacios">
+                    <thead>
+                        <tr>
+                            <th>Propiedad</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Estado</th>
+                            <th>Permite reembolso</th>
+                            <th>Permite cancelación</th>
+                            <th>Tiempo previo cancelación</th>
+                            <th>Tiempo de reservación</th>
+                            <th>Fotos</th>
+                            <th>Horarios</th>
+                            <th>Características</th>
+                            <th></th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="tblBodyEspacios"></tbody>
+                </table>
+
+                <div>
+                    @Html.CtrlButton(viewName: "vMantenimientoEspacios", id: "btnCre", label: "Nuevo espacio", onClickFunction: "EspacioNuevo", buttonType: "primary")
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

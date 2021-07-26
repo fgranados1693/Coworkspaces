@@ -1,0 +1,29 @@
+﻿
+@using WebApp.Helpers;
+<script src="~/Scripts/Views/CodigoOlvidoContrasenna.js"></script>
+@{
+    Layout = "~/Views/Shared/_LayoutForms.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <div>
+                <h4>Ingrese la siguiente información para verificar el cambio de contraseña</h4>
+            </div>
+            <form id="formEmail">
+
+                @Html.CtrlInput(id: "txtCodigo", type: "text", label: "Ingrese el código que se envió a su correo electrónico", columnDataName: "codigo", placeHolder: "Código de verificación")
+
+            </form>
+            <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                <span id="alert_message"></span>
+            </div>
+            <div>
+                @Html.CtrlButton(viewName: "verificarCodigo", id: "btnCreate", label: "Enviar", onClickFunction: "Verify", buttonType: "success")
+            </div>
+        </div>
+    </div>
+</div>

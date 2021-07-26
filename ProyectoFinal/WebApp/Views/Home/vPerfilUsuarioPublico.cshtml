@@ -1,0 +1,68 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{
+    ViewBag.Title = "vPerfilUsuarioPublico";
+}
+
+@section No_Dashboard {
+    <script src="~/Scripts/Views/vPerfilUsuarioPublico.js"></script>
+    <script src="~/Scripts/Views/CalificacionUsuarios.js"></script>
+    <link href="~/Content/Project_Styles/PerfilUsuario.css" rel="stylesheet" />
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <div class="circular--landscape">
+                    <img id="URL_Foto" />
+                </div>
+                <h3 id="FullName"></h3>
+                <div id='calificacion'></div><br>
+
+                <table class="table">
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">Fecha de nacimiento</th>
+                            <td id="Fecha_Nacimiento"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Género</th>
+                            <td id="Genero"></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container visually-hidden" id="prop-cont">
+        <div class="row">
+            <div class="col align-self-center">
+                <h3>Propiedades</h3>
+
+                <table class="display custom-table" id="tblPropiedades">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblBodyPropiedades"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <div>
+                    @Html.CtrlButton(viewName: "vPerfilUsuarioPublico", id: "btnMsg", label: "Enviar mensaje", onClickFunction: "Msg", buttonType: "primary")
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

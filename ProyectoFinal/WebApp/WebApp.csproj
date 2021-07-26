@@ -1,0 +1,561 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F4E00567-EF29-47CE-B163-DC1D1BFBA7B0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApp</RootNamespace>
+    <AssemblyName>WebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44376</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Content Include="Content\CalendarPicker.style.css" />
+    <Content Include="Content\Project_Styles\CustomDataTables.css" />
+    <Content Include="Content\Project_Styles\FotoPropiedad.css" />
+    <Content Include="Content\Project_Styles\IniciarSesion.css" />
+    <Content Include="Content\Project_Styles\ListarCaracteristicasEspacio.css" />
+    <Content Include="Content\Project_Styles\MantenimientoCategorias.css" />
+    <Content Include="Content\Project_Styles\MantenimientoParametros.css" />
+    <Content Include="Content\Project_Styles\MapStyle.css" />
+    <Content Include="Content\Project_Styles\PagarReserva.css" />
+    <Content Include="Content\Project_Styles\PerfilPropiedad.css" />
+    <Content Include="Content\Project_Styles\PerfilUsuario.css" />
+    <Content Include="Content\Project_Styles\vCalificarUsuario.css" />
+    <Content Include="Content\Project_Styles\vEspacios.css" />
+    <Content Include="Content\Project_Styles\RegistrarCaracteristicaEspacio.css" />
+    <Content Include="Content\Project_Styles\RegistrarEspacio2.css" />
+    <Content Include="Content\Project_Styles\RegistrarEspacio1.css" />
+    <Content Include="Content\Project_Styles\RegistrarPropiedad.css" />
+    <Content Include="Content\Project_Styles\Layout.css" />
+    <Content Include="Content\Project_Styles\OlvidarContrasenna.css" />
+    <Content Include="Content\Project_Styles\RevisarSolicitud.css" />
+    <Content Include="Content\Project_Styles\vRegistroEspacio3.css" />
+    <Content Include="Content\Project_Styles\vReporteEspacios.css" />
+    <Content Include="Models\Controls\CtrlChartPieModel.html" />
+    <Content Include="Models\Controls\CtrlTableModel.html" />
+    <Compile Include="Models\Controls\CtrlCardModel.cs" />
+    <Compile Include="Models\Controls\CtrlChartPieModel.cs" />
+    <Compile Include="Models\Controls\CtrlTableModel.cs" />
+    <Content Include="Models\Controls\CtrlInputModel.html" />
+    <Compile Include="Models\Controls\CtrlInputModel.cs" />
+    <Content Include="Models\Controls\CtrlDropDownModel.html" />
+    <Compile Include="Models\Controls\CtrlDropDownModel.cs" />
+    <Content Include="Models\Controls\CtrlChartModel.html" />
+    <Content Include="Models\Controls\CtrlButtonModel.html" />
+    <Compile Include="Models\Controls\CtrlChartModel.cs" />
+    <Compile Include="Models\Controls\CtrlButtonModel.cs" />
+    <Compile Include="Models\Controls\CtrlBaseModel.cs" />
+    <Compile Include="Models\Helpers\ControlExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Scripts\CalendarPicker.js" />
+    <Content Include="Scripts\Views\CalificacionUsuarios.js" />
+    <Content Include="Scripts\Views\CambiarContrasenna.js" />
+    <Content Include="Scripts\Views\CodigoOlvidoContrasenna.js" />
+    <Content Include="Scripts\Views\CloudinaryConfiguration.js" />
+    <Content Include="Scripts\Views\PagarReserva.js" />
+    <Content Include="Scripts\Views\RegistrarCaracteristicaEspacio.js" />
+    <Content Include="Scripts\Views\vCalificarPropiedad.js" />
+    <Content Include="Scripts\Views\vCalificarUsuario.js" />
+    <Content Include="Scripts\Views\vEliminarCaracteristicaEspacio.js" />
+    <Content Include="Scripts\Views\vEnviarQRTest.js" />
+    <Content Include="Scripts\Views\vEspacios.js" />
+    <Content Include="Scripts\Views\vListarCaracteristicasEspacio.js" />
+    <Content Include="Scripts\Views\ValidacionRoles.js" />
+    <Content Include="Scripts\Views\vConversacion.js" />
+    <Content Include="Scripts\Views\vListarConversaciones.js" />
+    <Content Include="Scripts\Views\vListarReservas.js" />
+    <Content Include="Scripts\Views\vMantenimientoCaracteristicasEspacio.js" />
+    <Content Include="Scripts\Views\vModificarComision.js" />
+    <Content Include="Scripts\Views\vPerfilPropiedadPublico.js" />
+    <Content Include="Scripts\Views\vPerfilSolicitud.js" />
+    <Content Include="Scripts\Views\vPerfilUsuarioPublico.js" />
+    <Content Include="Scripts\Views\vRegistrarDocumentoPropiedadSolicitud.js" />
+    <Content Include="Scripts\Views\vRegistrarFotoPropiedadSolicitud.js" />
+    <Content Include="Scripts\Views\vRegistroEspacio3.js" />
+    <Content Include="Scripts\Views\vReporteUsuarios.js" />
+    <Content Include="Scripts\Views\vReporteIngresosPropietario.js" />
+    <Content Include="Scripts\Views\vReporteIngresos.js" />
+    <Content Include="Scripts\Views\vTerminosCondiciones.js" />
+    <Content Include="Scripts\Views\vListarMembresias.js" />
+    <Content Include="Scripts\Views\vListarSolicitudes.js" />
+    <Content Include="Scripts\Views\vMantenimientoEspacios.js" />
+    <Content Include="Scripts\Views\vModificarCaracteristicaEspacio.js" />
+    <Content Include="Scripts\Views\vModificarEspacio.js" />
+    <Content Include="Scripts\Views\vModificarTelefono1.js" />
+    <Content Include="Scripts\Views\vModificarEmail1.js" />
+    <Content Include="Scripts\Views\vListarFacturas.js" />
+    <Content Include="Scripts\Views\vPerfilEspacio.js" />
+    <Content Include="Scripts\Views\vPerfilFactura.js" />
+    <Content Include="Scripts\Views\vMantenimientoImpuestos.js" />
+    <Content Include="Scripts\Views\vRecargarMonedero.js" />
+    <Content Include="Scripts\Views\vBitacora.js" />
+    <Content Include="Scripts\Views\vMantenimientoHorarios.js" />
+    <Content Include="Scripts\Views\vPagarMembresia.js" />
+    <Content Include="Scripts\Views\vMantenimientoCategorias.js" />
+    <Compile Include="Security\SecurityFilter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Chart.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\jquery.dataTables.min.css" />
+    <Content Include="Models\Controls\CtrlCardModel.html" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Views\CerrarSesion.js" />
+    <Content Include="Scripts\Views\ControlActions.js" />
+    <Content Include="Scripts\Views\Main.js" />
+    <Content Include="Scripts\Views\MapConfiguration.js" />
+    <Content Include="Scripts\Views\MD5.js" />
+    <Content Include="Scripts\Views\OlvidarContrasenna.js" />
+    <Content Include="Scripts\Views\Validaciones.js" />
+    <Content Include="Scripts\Views\vIndex.js" />
+    <Content Include="Content\Landing_Config\css\style.css" />
+    <Content Include="Content\Landing_Config\img\apple-touch-icon.png" />
+    <Content Include="Content\Landing_Config\img\clients\client-1.png" />
+    <Content Include="Content\Landing_Config\img\clients\client-2.png" />
+    <Content Include="Content\Landing_Config\img\clients\client-3.png" />
+    <Content Include="Content\Landing_Config\img\clients\client-4.png" />
+    <Content Include="Content\Landing_Config\img\clients\client-5.png" />
+    <Content Include="Content\Landing_Config\img\clients\client-6.png" />
+    <Content Include="Content\Landing_Config\img\counts-img.svg" />
+    <Content Include="Content\Landing_Config\img\favicon.png" />
+    <Content Include="Content\Landing_Config\img\hero-img.png" />
+    <Content Include="Content\Landing_Config\img\illustration-6.svg" />
+    <Content Include="Content\Landing_Config\img\more-services-1.jpg" />
+    <Content Include="Content\Landing_Config\img\more-services-2.jpg" />
+    <Content Include="Content\Landing_Config\img\more-services-3.jpg" />
+    <Content Include="Content\Landing_Config\img\more-services-4.jpg" />
+    <Content Include="Content\Landing_Config\img\portfolio\portfolio-1.jpg" />
+    <Content Include="Content\Landing_Config\img\portfolio\portfolio-2.jpg" />
+    <Content Include="Content\Landing_Config\img\portfolio\portfolio-3.jpg" />
+    <Content Include="Content\Landing_Config\img\portfolio\portfolio-4.jpg" />
+    <Content Include="Content\Landing_Config\img\portfolio\portfolio-5.jpg" />
+    <Content Include="Content\Landing_Config\img\portfolio\portfolio-6.jpg" />
+    <Content Include="Content\Landing_Config\img\portfolio\portfolio-7.jpg" />
+    <Content Include="Content\Landing_Config\img\portfolio\portfolio-8.jpg" />
+    <Content Include="Content\Landing_Config\img\portfolio\portfolio-9.jpg" />
+    <Content Include="Content\Landing_Config\img\portfolio\portfolio-details-1.jpg" />
+    <Content Include="Content\Landing_Config\img\portfolio\portfolio-details-2.jpg" />
+    <Content Include="Content\Landing_Config\img\portfolio\portfolio-details-3.jpg" />
+    <Content Include="Content\Landing_Config\img\team\team-1.jpg" />
+    <Content Include="Content\Landing_Config\img\team\team-2.jpg" />
+    <Content Include="Content\Landing_Config\img\team\team-3.jpg" />
+    <Content Include="Content\Landing_Config\img\team\team-4.jpg" />
+    <Content Include="Content\Landing_Config\img\testimonials\testimonials-1.jpg" />
+    <Content Include="Content\Landing_Config\img\testimonials\testimonials-2.jpg" />
+    <Content Include="Content\Landing_Config\img\testimonials\testimonials-3.jpg" />
+    <Content Include="Content\Landing_Config\img\testimonials\testimonials-4.jpg" />
+    <Content Include="Content\Landing_Config\img\testimonials\testimonials-5.jpg" />
+    <Content Include="Content\Landing_Config\js\main.js" />
+    <Content Include="Content\Landing_Config\vendor\aos\aos.css" />
+    <Content Include="Content\Landing_Config\vendor\aos\aos.js" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap-icons\bootstrap-icons.css" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap-icons\index.html" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\js\bootstrap.esm.js" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\Landing_Config\vendor\boxicons\css\animations.css" />
+    <Content Include="Content\Landing_Config\vendor\boxicons\css\boxicons.css" />
+    <Content Include="Content\Landing_Config\vendor\boxicons\css\boxicons.min.css" />
+    <Content Include="Content\Landing_Config\vendor\boxicons\css\transformations.css" />
+    <Content Include="Content\Landing_Config\vendor\boxicons\fonts\boxicons.svg" />
+    <Content Include="Content\Landing_Config\vendor\glightbox\css\glightbox.css" />
+    <Content Include="Content\Landing_Config\vendor\glightbox\css\glightbox.min.css" />
+    <Content Include="Content\Landing_Config\vendor\glightbox\js\glightbox.js" />
+    <Content Include="Content\Landing_Config\vendor\glightbox\js\glightbox.min.js" />
+    <Content Include="Content\Landing_Config\vendor\isotope-layout\isotope.pkgd.js" />
+    <Content Include="Content\Landing_Config\vendor\isotope-layout\isotope.pkgd.min.js" />
+    <Content Include="Content\Landing_Config\vendor\php-email-form\validate.js" />
+    <Content Include="Content\Landing_Config\vendor\purecounter\purecounter.js" />
+    <Content Include="Content\Landing_Config\vendor\remixicon\remixicon.css" />
+    <Content Include="Content\Landing_Config\vendor\remixicon\remixicon.svg" />
+    <Content Include="Content\Landing_Config\vendor\remixicon\remixicon.symbol.svg" />
+    <Content Include="Content\Landing_Config\vendor\swiper\swiper-bundle.min.css" />
+    <Content Include="Content\Landing_Config\vendor\swiper\swiper-bundle.min.js" />
+    <Content Include="Scripts\Views\vCambiarContrasenna.js" />
+    <Content Include="Scripts\Views\vIngresarTelefono.js" />
+    <Content Include="Scripts\Views\vModificarPerfilUsuario.js" />
+    <Content Include="Scripts\Views\vListarUsuarios.js" />
+    <Content Include="Scripts\Views\vPropiedades.js" />
+    <Content Include="Scripts\Views\vPerfilUsuarioOtro.js" />
+    <Content Include="Scripts\Views\vPerfilPropiedad.js" />
+    <Content Include="Scripts\Views\vRegistrarComision.js" />
+    <Content Include="Scripts\Views\vRegistrarFotoPerfil.js" />
+    <Content Include="Scripts\Views\vRegistrarDocumentoPropiedad.js" />
+    <Content Include="Scripts\Views\vRegistrarFotoPropiedad.js" />
+    <Content Include="Scripts\Views\vRegistrarPropiedadAdmin.js" />
+    <Content Include="Scripts\Views\vRegistroPropiedadSolicitud.js" />
+    <Content Include="Scripts\Views\vRegistroEspacio1.js" />
+    <Content Include="Scripts\Views\vRegistroEspacio2.js" />
+    <Content Include="Scripts\Views\vMantenimientoParametros.js" />
+    <Content Include="Scripts\Views\vMantenimientoPropiedades.js" />
+    <Content Include="Scripts\Views\vModificarPropiedad.js" />
+    <Content Include="Scripts\Views\vReporteEspacios.js" />
+    <Content Include="Scripts\Views\vRevisarSolicitud.js" />
+    <Content Include="Scripts\Views\vSeleccionarTipoUsuario.js" />
+    <Content Include="Scripts\Views\vModificarEmail2.js" />
+    <Content Include="Scripts\Views\vModificarTelefono2.js" />
+    <Content Include="Scripts\Views\vVerificarTelefono.js" />
+    <Content Include="Scripts\Views\vVerificarEmail.js" />
+    <Content Include="Scripts\Views\vIniciarSesion.js" />
+    <Content Include="Scripts\Views\vPerfilUsuario.js" />
+    <Content Include="Scripts\Views\vIngresarEmail.js" />
+    <Content Include="Scripts\Views\vRegistroUsuario.js" />
+    <Content Include="Scripts\Views\vRegistrarPropiedad.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\vContacto.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap-icons\bootstrap-icons.json" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap-icons\fonts\bootstrap-icons.woff" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap-icons\fonts\bootstrap-icons.woff2" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Content\Landing_Config\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Content\Landing_Config\vendor\boxicons\fonts\boxicons.eot" />
+    <Content Include="Content\Landing_Config\vendor\boxicons\fonts\boxicons.ttf" />
+    <Content Include="Content\Landing_Config\vendor\boxicons\fonts\boxicons.woff" />
+    <Content Include="Content\Landing_Config\vendor\boxicons\fonts\boxicons.woff2" />
+    <Content Include="Content\Landing_Config\vendor\remixicon\remixicon.eot" />
+    <Content Include="Content\Landing_Config\vendor\remixicon\remixicon.less" />
+    <Content Include="Content\Landing_Config\vendor\remixicon\remixicon.ttf" />
+    <Content Include="Content\Landing_Config\vendor\remixicon\remixicon.woff" />
+    <Content Include="Content\Landing_Config\vendor\remixicon\remixicon.woff2" />
+    <Content Include="Views\Home\vEspacios.cshtml" />
+    <Content Include="Views\Home\vSobreNosotros.cshtml" />
+    <Content Include="Views\Home\vIniciarSesion.cshtml" />
+    <Content Include="Views\Home\vPerfilUsuario.cshtml" />
+    <Content Include="Views\Home\OlvidarContrasenna.cshtml" />
+    <Content Include="Views\Home\CodigoOlvidoContrasenna.cshtml" />
+    <Content Include="Views\Home\vRegistroUsuario.cshtml" />
+    <Content Include="Views\Shared\_LayoutForms.cshtml" />
+    <Content Include="Views\Home\vIngresarEmail.cshtml" />
+    <Content Include="Views\Home\vVerificarEmail.cshtml" />
+    <Content Include="Views\Home\vIngresarTelefono.cshtml" />
+    <Content Include="Views\Home\vVerificarTelefono.cshtml" />
+    <Content Include="Views\Home\vRegistrarPropiedad.cshtml" />
+    <Content Include="Views\Home\CambiarContrasenna.cshtml" />
+    <Content Include="Views\Home\vModificarPerfilUsuario.cshtml" />
+    <Content Include="Views\Home\vListarUsuarios.cshtml" />
+    <Content Include="Views\Home\vRegistrarEspacio1.cshtml" />
+    <Content Include="Views\Home\vRegistrarEspacio2.cshtml" />
+    <Content Include="Views\Home\vMantenimientoCategorias.cshtml" />
+    <Content Include="Views\Home\vMantenimientoPropiedades.cshtml" />
+    <Content Include="Views\Home\vMantenimientoParametros.cshtml" />
+    <Content Include="Views\Home\vModificarPropiedad.cshtml" />
+    <Content Include="Views\Home\vPerfilPropiedad.cshtml" />
+    <Content Include="Views\Home\vPropiedades.cshtml" />
+    <Content Include="Views\Home\vCambiarContrasenna.cshtml" />
+    <Content Include="Views\Home\vPerfilUsuarioOtro.cshtml" />
+    <Content Include="Views\Home\vPagarMembresia.cshtml" />
+    <Content Include="Views\Home\vRegistroPropiedadSolicitud.cshtml" />
+    <Content Include="Views\Home\vRecargarMonedero.cshtml" />
+    <Content Include="Views\Home\vListarCaracteristicasEspacio.cshtml" />
+    <Content Include="Views\Home\vRegistrarCaracteristicaEspacio.cshtml" />
+    <Content Include="Views\Home\vListarSolicitudes.cshtml" />
+    <Content Include="Views\Home\vRegistrarFotoPerfil.cshtml" />
+    <Content Include="Views\Home\vRegistrarComision.cshtml" />
+    <Content Include="Views\Home\vModificarCaracteristicaEspacio.cshtml" />
+    <Content Include="Views\Home\vResponderSolicitud.cshtml" />
+    <Content Include="Views\Home\vRevisarSolicitud.cshtml" />
+    <Content Include="Views\Home\vListarFacturas.cshtml" />
+    <Content Include="Views\Home\vPerfilFactura.cshtml" />
+    <Content Include="Views\Home\vModificarEmail2.cshtml" />
+    <Content Include="Views\Home\vModificarEmail1.cshtml" />
+    <Content Include="Views\Home\vModificarTelefono1.cshtml" />
+    <Content Include="Views\Home\vModificarTelefono2.cshtml" />
+    <Content Include="Views\Home\vListarMembresias.cshtml" />
+    <Content Include="Views\Home\vMantenimientoImpuestos.cshtml" />
+    <Content Include="Views\Home\vModificarEspacio.cshtml" />
+    <Content Include="Views\Home\vMantenimientoEspacios.cshtml" />
+    <Content Include="Views\Home\vPerfilEspacio.cshtml" />
+    <Content Include="Views\Home\vReporteEspacios.cshtml" />
+    <Content Include="Views\Home\vReportes.cshtml" />
+    <Content Include="Scripts\Views\vReportes.js" />
+    <Content Include="Views\Home\vRegistrarPropiedadAdmin.cshtml" />
+    <Content Include="Views\Home\vHorarios.cshtml" />
+    <Content Include="Views\Home\vMantenimientoHorarios.cshtml" />
+    <Content Include="Views\Home\vBitacora.cshtml" />
+    <Content Include="Views\Home\vTerminosCondiciones.cshtml" />
+    <Content Include="Views\Home\vRegistrarFotoPropiedadSolicitud.cshtml" />
+    <Content Include="Views\Home\vRegistrarDocumentoPropiedadSolicitud.cshtml" />
+    <Content Include="Views\Home\vPerfilSolicitud.cshtml" />
+    <Content Include="Views\Home\vRegistrarEspacio3.cshtml" />
+    <Content Include="Views\Home\vMantenimientoCaracteristicasEspacio.cshtml" />
+    <Content Include="Views\Home\vPerfilUsuarioPublico.cshtml" />
+    <Content Include="Views\Home\vModificarComision.cshtml" />
+    <Content Include="Views\Home\vListarConversaciones.cshtml" />
+    <Content Include="Views\Home\vConversacion.cshtml" />
+    <Content Include="Views\Home\vListarReservas.cshtml" />
+    <Content Include="Views\Home\vEnviarQRTest.cshtml" />
+    <Content Include="Views\Shared\_LayoutSinDashboard.cshtml" />
+    <Content Include="Views\Home\PagarReserva.cshtml" />
+    <Content Include="Views\Home\vReporteIngresos.cshtml" />
+    <Content Include="Views\Home\vReporteIngresosPropietario.cshtml" />
+    <Content Include="Views\Home\vCalificarUsuario.cshtml" />
+    <Content Include="Views\Home\vCalificarPropiedad.cshtml" />
+    <Content Include="Views\Home\vPerfilPropiedadPublico.cshtml" />
+    <Content Include="Views\Shared\_LayoutIndex.cshtml" />
+    <Content Include="Views\Home\vReporteUsuarios.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="NewFolder1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreAPI\CoreAPI.csproj">
+      <Project>{ca94589f-d791-4c5b-9c61-29f64b49f30b}</Project>
+      <Name>CoreAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{04d7c73c-6ec2-4e11-a6af-dc04d6f24466}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities-POJO\Entities-POJO.csproj">
+      <Project>{a82c6985-7184-4523-8e70-2033aa555ff5}</Project>
+      <Name>Entities-POJO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Exceptions\Exceptions.csproj">
+      <Project>{0e5f5a29-b6e4-4a71-b4cb-6e0129108d98}</Project>
+      <Name>Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebAPI\WebAPI.csproj">
+      <Project>{d440071a-207b-408c-a020-fe43cdd0bd12}</Project>
+      <Name>WebAPI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58543</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44376/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

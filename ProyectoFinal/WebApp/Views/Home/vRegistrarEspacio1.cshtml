@@ -1,0 +1,71 @@
+﻿
+@using WebApp.Helpers;
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+
+
+@{
+    Layout = "~/Views/Shared/_LayoutForms.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <div>
+                <h5>Registro de nuevo espacio</h5>
+            </div>
+            <form id="formEspacio1" class="needs-validation">
+
+                <label>Seleccione la propiedad en la que desea crear el espacio</label><br>
+                <select name="propiedades" id="select-propiedades" columnDataName="Propiedad" required>
+                    <option value="" selected>Seleccione la propiedad</option>
+                </select><br>
+
+                <label>Seleccione la categoría del espacio</label><br>
+                <select name="categorias" id="select-categorias" columnDataName="Categoria" required>
+                    <option value="" selected>Seleccione la categoría</option>
+                </select>
+
+                @Html.CtrlInput(idLabel: "lblNombre", id: "Nombre", type: "text", label: "Nombre", columnDataName: "Nombre")
+
+                @Html.CtrlInput(idLabel: "lblPrecio", id: "Precio", type: "number", label: "Precio (₡)", columnDataName: "Precio", placeHolder: "")
+
+                <!--
+    <textarea id="descripcion" placeholder="Descripción" columnDataName="Descripcion"></textarea>
+    -->
+
+                <div class="form-group class-img">
+                    <label>Adjunte las imágenes del espacio (puede agregar más de una imagen)</label>
+                    <img id="img-cnt" width="200" height="200" />
+                    @Html.CtrlButton(viewName: "vRegistrarEspacio1", id: "upload_widget", label: "Agregar imágenes", onClickFunction: "Cargar", buttonType: "primary")
+                </div>
+
+                <div class="form-group class-reembolso">
+                    <label id="lbl-reembolso">Permite reembolso</label><br>
+                    <input type="radio" id="reembolso1" columnDataName="reembolso1" name="reembolso" value="true" required />
+                    <label for="reembolsoSi">Sí</label>
+                    <input type="radio" id="reembolso2" columnDataName="reembolso2" name="reembolso" value="false" />
+                    <label for="reembolsoNo">No</label>
+                </div>
+                <div class="form-group class-cancelacion">
+                    <label id="lbl-cancelacion">Permite cancelación</label><br>
+                    <input type="radio" id="cancelacion1" columnDataName="cancelacion1" name="cancelacion" value="true" required />
+                    <label for="cancelacionSi">Sí</label>
+                    <input type="radio" id="cancelacion2" columnDataName="cancelacion2" name="cancelacion" value="true" />
+                    <label for="cancelacionNo">No</label>
+                </div>
+
+            </form>
+            <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                <p id="alert_message"></p>
+                <p id="alert_message_foto"></p>
+            </div>
+            <div>
+                @Html.CtrlButton(viewName: "vRegistrarEspacio1", id: "btnEnviar", label: "Continuar", onClickFunction: "EnviarDatos", buttonType: "primary")
+            </div>
+        </div>
+    </div>
+</div>
+<link href="~/Content/Project_Styles/RegistrarEspacio1.css" rel="stylesheet" />
+<script src="~/Scripts/Views/vRegistroEspacio1.js"></script>

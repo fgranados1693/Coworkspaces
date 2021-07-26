@@ -1,0 +1,50 @@
+﻿
+
+@using WebApp.Helpers;
+
+
+@{
+    Layout = "~/Views/Shared/_LayoutForms.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <div>
+                <h5>Registro de nuevo espacio</h5>
+            </div>
+            <form id="formModEspacio" class="needs-validation">
+
+                @Html.CtrlInput(idLabel: "lblPropiedad", id: "Propiedad", type: "text", label: "Propiedad", columnDataName: "Propiedad")
+                @Html.CtrlInput(idLabel: "lblCategoria", id: "Categoria", type: "text", label: "Categoría", columnDataName: "Categoria")
+
+                @Html.CtrlInput(idLabel: "lblNombre", id: "Nombre", type: "text", label: "Nombre", columnDataName: "Nombre")
+
+                @Html.CtrlInput(idLabel: "lblPrecio", id: "Precio", type: "number", label: "Precio (₡)", columnDataName: "Precio", placeHolder: "")
+                @Html.CtrlDropDown(id: "Estado", label: "Estado", listId: "LST_ESTADO_ESPACIOS", columnDataName: "Estado", placeHolder: "Seleccione una opción")
+
+                @Html.CtrlDropDown(id: "Permite_Reembolso", label: "Permite reembolso", listId: "LST_ESTADO_REEMBOLSO", columnDataName: "Permite_Reembolso", placeHolder: "Seleccione una opción")
+                @Html.CtrlDropDown(id: "Permite_Cancelacion", label: "Permite cancelación", listId: "LST_ESTADO_CANCELACION", columnDataName: "Permite_Cancelacion", placeHolder: "Seleccione una opción")
+
+                @Html.CtrlInput(idLabel: "lblTiempoCancelacion", id: "Tiempo_Cancelacion", type: "number", label: "Tiempo mínimo para cancelar", columnDataName: "Tiempo_Cancelacion")
+
+                @Html.CtrlInput(idLabel: "lblReserva", id: "Tiempo_Reserva", type: "number", label: "Tiempo de cada reserva", columnDataName: "Tiempo_Reservacion")
+
+                @Html.CtrlInput(idLabel: "lblMensaje", id: "Mensaje_Reservacion", type: "text", label: "Mensaje Reservacion", columnDataName: "Mensaje_Reservacion")
+
+
+            </form>
+            <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                <p id="alert_message"></p>
+                <p id="alert_message_foto"></p>
+            </div>
+            <div>
+                @Html.CtrlButton(viewName: "vModificarEspacio", id: "btnEnviar", label: "Modificar", onClickFunction: "Modificar", buttonType: "primary")
+            </div>
+        </div>
+    </div>
+</div>
+<link href="~/Content/Project_Styles/RegistrarEspacio1.css" rel="stylesheet" />
+<script src="~/Scripts/Views/vModificarEspacio.js"></script>

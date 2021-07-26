@@ -1,0 +1,35 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{
+    ViewBag.Title = "vListarFacturas";
+}
+
+@section Dashboard {
+    <script src="~/Scripts/Views/vListarFacturas.js"></script>
+    <link href="~/Content/Project_Styles/CustomDataTables.css" rel="stylesheet" />
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <h3>Facturas</h3>
+
+                <table class="display custom-table" id="tblUsuarios">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Usuario</th>
+                            <th>Detalle</th>
+                            <th>Monto</th>
+                            <th></th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="tblBodyFacturas"></tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+}

@@ -1,0 +1,47 @@
+﻿
+
+@using WebApp.Helpers;
+
+
+@{
+    Layout = "~/Views/Shared/_LayoutForms.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <div>
+                <h5>Características del espacio</h5>
+            </div>
+            <form id="formCaracteristicas" class="needs-validation">
+
+                @Html.CtrlInput(idLabel: "lblNombre", id: "Nombre", type: "text", label: "Nombre", columnDataName: "Nombre")
+
+                <textarea id="Descripcion" placeholder="Descripción" columnDataName="Descripcion"></textarea>
+
+            </form>
+            <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                <p id="alert_message"></p>
+                <p id="alert_message_foto"></p>
+            </div>
+            <div>
+                @Html.CtrlButton(viewName: "vRegistrarEspacio3", id: "btnAgregar", label: "Agregar", onClickFunction: "AgregarCaracteristica", buttonType: "primary")
+            </div>
+
+
+            <div id="listado-caracteristicas">
+                
+            </div>
+            <div>
+                @Html.CtrlButton(viewName: "vRegistrarEspacio3", id: "btnGuardar", label: "Guardar características", onClickFunction: "GuardarCaracteristicas", buttonType: "primary")
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+<link href="~/Content/Project_Styles/vRegistroEspacio3.css" rel="stylesheet" />
+<script src="~/Scripts/Views/vRegistroEspacio3.js"></script>

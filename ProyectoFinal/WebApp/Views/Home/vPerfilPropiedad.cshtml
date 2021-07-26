@@ -1,0 +1,81 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml";}
+
+@{ ViewBag.Title = "vPerfilPropiedad";}
+
+@section Dashboard {
+    <!--Scripts-->
+    <script src="~/Scripts/Views/vPerfilPropiedad.js"></script>
+    <!---Style sheets-->
+    <link href="~/Content/Project_Styles/PerfilPropiedad.css" rel="stylesheet" />
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <h3>Información de la propiedad</h3>
+
+                <table class="table">
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">Nombre</th>
+                            <td id="Nombre"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Descripción</th>
+                            <td id="Descripcion"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <h4>Lista de documentos</h4>
+
+                <table class="display custom-table" id="tblDocumentos">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Eliminar</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="tblBodyPropiedades"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <h4>Lista de fotografías</h4>
+
+                <table class="display custom-table" id="tblFotografias">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Eliminar</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="tblBodyFotografias"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+        <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+        <p id="alert_message"></p>
+        <p id="alert_message_pwd"></p>
+    </div>
+
+}
+
+
+

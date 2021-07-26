@@ -1,0 +1,29 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/vIngresarEmail.js"></script>
+@{
+    Layout = "~/Views/Shared/_LayoutForms.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <div>
+                <h5>Crea una nueva cuenta de Coworkspaces.</h5>
+                <h5>Paso 1</h5>
+            </div>
+            <form id="formEmail">
+
+                @Html.CtrlInput(id: "txtEmail", type: "email", label: "Correo electrónico", columnDataName: "email", placeHolder: "Ingresa tu dirección de correo electrónico")
+
+            </form>
+            <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                <span id="alert_message"></span>
+            </div>
+            <div>
+                @Html.CtrlButton(viewName: "vIngresarEmail", id: "btnCreate", label: "Enviar", onClickFunction: "Create", buttonType: "primary")
+            </div>
+        </div>
+    </div>
+</div>

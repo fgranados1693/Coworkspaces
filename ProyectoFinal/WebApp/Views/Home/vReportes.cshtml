@@ -1,0 +1,25 @@
+﻿
+@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{
+    ViewBag.Title = "vReportes";
+}
+
+@section Dashboard {
+    <script src="~/Scripts/Views/vReportes.js"></script>
+
+    <div class="container">
+        <h3>Reportes</h3>
+
+        <div class="row">
+            <div class="col align-self-center">
+                @Html.CtrlButton(viewName: "vReportes", id: "btnReporteEspacios", label: "Reporte espacios", onClickFunction: "vReporteEspacios", buttonType: "primary")
+                @Html.CtrlButton(viewName: "vReportes", id: "btnReporteIngresosAdmin", label: "Reporte transacciones", onClickFunction: "vReporteTransaccionesAdmin", buttonType: "primary")
+                @Html.CtrlButton(viewName: "vReportes", id: "btnReporteIngresosProp", label: "Reporte transacciones", onClickFunction: "vReporteTransaccionesProp", buttonType: "primary")
+                @Html.CtrlButton(viewName: "vReportes", id: "btnReporteUsuarios", label: "Reporte usuarios", onClickFunction: "vReporteUsuarios", buttonType: "primary")
+            </div>
+        </div>
+    </div>
+    
+}

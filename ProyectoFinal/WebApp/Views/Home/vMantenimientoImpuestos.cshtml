@@ -1,0 +1,48 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{ ViewBag.Title = "vMantenimientoImpuestos"; }
+
+@section Dashboard {
+    <script src="~/Scripts/Views/vMantenimientoImpuestos.js"></script>
+    <!--Scripts-->
+    <!--Style sheets-->
+
+    @Html.CtrlTable(viewName: "vMantenimientoImpuestos", id: "tblImpuestos", title: "Listado de impuestos",
+    columnsTitle: "Id,Nombre,Valor", ColumnsDataName: "Id_Impuesto,Nombre,Valor",
+    onSelectFunction: "BindFields", colorHeader: "red")
+
+
+    <div class="card border-secondary" style="margin-top: 50px;">
+        <div class="card-header">
+            <div class="row pull-right">
+                <div class="col-md-8">Impuestos edition</div>
+                <div class="col-md-4">
+                    @Html.CtrlButton(viewName: "vMantenimientoImpuestos", id: "btnCreate", label: "Crear impuesto", onClickFunction: "Create", buttonType: "success")
+                    @Html.CtrlButton(viewName: "vMantenimientoImpuestos", id: "btnUpdate", label: "Guardar cambios", onClickFunction: "Update", buttonType: "info")
+                    @Html.CtrlButton(viewName: "vMantenimientoImpuestos", id: "btnDelete", label: "Eliminar", onClickFunction: "Delete", buttonType: "danger")
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="bs-component">
+                        <form id="frmEdition">
+                            @Html.CtrlInput(id: "txtId", type: "text", label: "Id", columnDataName: "Id_Impuesto", idLabel: "lblId")
+                            @Html.CtrlInput(id: "txtNombre", type: "text", label: "Nombre", columnDataName: "Nombre")
+                            @Html.CtrlInput(id: "txtValor", type: "text", label: "Valor", columnDataName: "Valor")
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    
+}
+

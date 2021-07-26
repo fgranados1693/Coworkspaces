@@ -1,0 +1,40 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{
+    ViewBag.Title = "vListarCaracteristicasEspacio";
+}
+
+@section Dashboard {
+
+    <link href="~/Content/Project_Styles/CustomDataTables.css" rel="stylesheet" />
+
+    <!--Scripts-->
+    <script src="~/Scripts/Views/vListarCaracteristicasEspacio.js"></script>
+    <!--Style sheets-->
+    <link href="~/Content/Project_Styles/RegistrarCaracteristicaEspacio.css" rel="stylesheet" />
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <h3>Listar Caracteristicas de Espacio</h3>
+
+                <table class="display custom-table" id="tblCaracteristicas">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripcion</th>
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblBodyCaracteristicas"></tbody>
+                </table>
+
+                <div>
+                    @Html.CtrlButton(viewName: "vListarCaracteristicas", id: "btnCre", label: "Nueva Caracteristica", onClickFunction: "Create", buttonType: "primary")
+                </div>
+            </div>
+        </div>
+    </div>
+}

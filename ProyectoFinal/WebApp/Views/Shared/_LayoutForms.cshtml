@@ -1,0 +1,130 @@
+﻿@using WebApp.Helpers;
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Coworkspaces</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/ce7d69f6cc.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js" integrity="sha512-nOQuvD9nKirvxDdvQ9OMqe2dgapbPB7vYAMrzJihw5m+aNcf0dX53m6YxM4LgA9u8e9eg9QX+/+mPu8kCNpV2A==" crossorigin="anonymous"></script>
+    <script src="~/Scripts/Views/Validaciones.js"></script>
+    <!-- Favicons
+    <link href="~/Content/Landing_Config/img/favicon.png" rel="icon">
+    <link href="~/Content/Landing_Config/img/apple-touch-icon.png" rel="apple-touch-icon">
+     -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/Content/Landing_Config/vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/Content/Landing_Config/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/Landing_Config/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Content/Landing_Config/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/Content/Landing_Config/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/Content/Landing_Config/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/Content/Landing_Config/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/Content/Landing_Config/css/style.css" rel="stylesheet">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Project_Styles/Layout.css" rel="stylesheet" />
+
+    <script src="~/Scripts/Views/ControlActions.js"></script>
+    <!-- =======================================================
+    * Template Name: Vesperr - v4.0.1
+    * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body onload="load()">
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo">
+                <h1>
+                    <a class="nav-link scrollto">
+                        @Html.ActionLink("Coworkspaces", "Index", "Home", new { @class = "nav-link" })
+                    </a>
+                </h1>
+            </div>
+
+        </div>
+    </header><!-- End Header -->
+
+    <div class="container body-content">
+        @*<div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                <span id="alert_message"></span>
+            </div>*@
+        @RenderBody()
+        <hr />
+
+    </div>
+
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+
+                <div class="col-lg-6 text-lg-left">
+                    <nav class="footer-links pt-2 pt-lg-0">
+
+                        <h3>
+                            <a class="nav-link scrollto">
+                                @Html.ActionLink("Coworkspaces", "Index", "Home", new { @class = "nav-link" })
+                            </a>
+                        </h3>
+                    </nav>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+
+                        <a class="scrollto" href="#">
+                            <i class="fab fa-instagram fa-lg"></i>
+
+                        </a>
+                        <a class="scrollto" href="#">
+                            <i class="fab fa-facebook-square fa-lg"></i>
+
+                        </a>
+                        <a class="scrollto" href="#">
+                            <i class="fab fa-twitter-square fa-lg"></i>
+
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+
+    <!-- Vendor JS Files -->
+    <script src="~/Content/Landing_Config/vendor/aos/aos.js"></script>
+    <script src="~/Content/Landing_Config/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/Landing_Config/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/Content/Landing_Config/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="~/Content/Landing_Config/vendor/php-email-form/validate.js"></script>
+    <script src="~/Content/Landing_Config/vendor/purecounter/purecounter.js"></script>
+    <script src="~/Content/Landing_Config/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Template Main JS File -->
+    
+
+</body>
+
+</html>

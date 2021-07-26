@@ -1,0 +1,29 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/vIngresarTelefono.js"></script>
+@{ 
+    Layout = "~/Views/Shared/_LayoutForms.cshtml"; 
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <div>
+                <h5>Crea una nueva cuenta de Coworkspaces.</h5>
+                <h5>Paso 3</h5>
+            </div>
+            <form id="formTelefono">
+
+                @Html.CtrlInput(id: "txtTelefono", type: "text", label: "Número de teléfono", columnDataName: "telefono", placeHolder: "Ingresa tu número de teléfono móvil")
+
+            </form>
+            <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                <span id="alert_message"></span>
+            </div>
+            <div>
+                @Html.CtrlButton(viewName: "vIngresarTelefono", id: "btnCreate", label: "Enviar", onClickFunction: "Create", buttonType: "primary")
+            </div>
+        </div>
+    </div>
+</div>

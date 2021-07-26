@@ -1,0 +1,141 @@
+﻿@using WebApp.Helpers;
+
+
+@{ Layout = "~/Views/Shared/_LayoutIndex.cshtml"; }
+@{ ViewBag.Title = "vPerfilEspacio"; }
+
+
+@section No_Dashboard {
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="col align-self-center">
+                        <div>
+                            <h5 id="Nombre">></h5>
+                            <br />
+                        </div>
+                        <form id="formModEspacio" class="needs-validation">
+
+                            <div>
+                                <div id="carouselPerfilEspacio" class="carousel slide carousel-fade" style="width: 85%; height: 85%; margin-bottom: 5%;" data-ride="carousel">
+                                    
+                                    <div class="carousel-inner">
+
+                                    </div>
+                                    <a id="ctrl-prev" class="carousel-control-prev" href="#carouselPerfilEspacio"  data-target="carouselPerfilEspacio">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Anterior</span>
+                                    </a>
+                                    <a id="ctrl-next" class="carousel-control-next" href="#carouselPerfilEspacio"  data-target="carouselPerfilEspacio">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Siguiente</span>
+                                    </a>
+                                </div>
+
+                                <!--
+            <img id="img-cnt" style="width: 75%; height: 75%;" />
+        -->
+                                <p id="Propiedad">Z</p>
+                                <!--
+        <p id="Nombre">Z</p>
+            -->
+                                <p id="Precio">Z</p>
+                                <p id="Permite_Reembolso">Z</p>
+                                <p id="Permite_Cancelacion">Z</p>
+                                <p id="Tiempo_Reserva">Z</p>
+                                <div id="div-caracteristicas">
+                                    <p><strong>Características</strong></p>
+                                    <br />
+                                </div>
+                                <!--
+        <p id="Hora_Inicio">Z</p>
+        <p id="Hora_Fin">Z</p>
+            -->
+                            </div>
+
+
+                        </form>
+
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 contenedor-calendario">
+                    <div>
+                        <h5>Calendario del espacio</h5>
+                        <br />
+                    </div>
+                    <div id="myCalendarWrapper" style="width: 110%;"></div>
+                    <h4>Seleccionar el horario a reservar</h4>
+                    <select class="form-control" id="selectHorarioEntrada">
+                        <option disabled selected>Horario de entrada</option>
+                    </select>
+                    <select class="form-control" id="selectHorarioSalida">
+                        <option disabled selected>Horario de salida</option>
+                    </select>
+                    <div id="inside" class="row pull-right">
+                        <div id="button" class="col-md-4">
+                            @Html.CtrlButton(viewName: "vPerfilEspacio", id: "btnCreate", label: "Agregar al carrito", onClickFunction: "Reservar", buttonType: "success")
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alert alert-personalizada alert-success alert-dismissable" style="display: none" id="alert_personalizada">
+                <button type="button" class="close" onclick="$('.alert-personalizada').hide()">&times;</button>
+                <p id="alert_message_personalizada"></p>
+            </div>
+        </div>
+        <!--
+    <div class="row">
+        <div class="col align-self-center">
+            <div>
+                <h5>Registro de nuevo espacio</h5>
+            </div>
+            <form id="formModEspacio" class="needs-validation">
+
+                <div>
+                    <img id="img-cnt" style="width: 75%; height: 75%;" />
+                    <p id="Propiedad">Z</p>
+                    <p id="Nombre">Z</p>
+                    <p id="Precio">Z</p>
+                    <p id="Permite_Reembolso">Z</p>
+                    <p id="Permite_Cancelacion">Z</p>
+                    <p id="Tiempo_Reserva">Z</p>
+                    <div id="div-caracteristicas">
+                        <p><strong>Características</strong></p>
+                        <br />
+                    </div>
+                    <!--
+                    <p id="Hora_Inicio">Z</p>
+                    <p id="Hora_Fin">Z</p>
+                        -->
+        <!--
+                </div>
+
+
+            </form>
+            <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                <p id="alert_message"></p>
+                <p id="alert_message_foto"></p>
+            </div>
+
+        </div>
+    </div>
+        -->
+    </div>
+
+    <link href="~/Content/CalendarPicker.style.css" rel="stylesheet" />
+    <script src="~/Scripts/CalendarPicker.js"></script>
+    <script src="~/Scripts/Views/vPerfilEspacio.js"></script>
+}
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+

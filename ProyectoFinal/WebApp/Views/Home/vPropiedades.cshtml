@@ -1,0 +1,26 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{
+    ViewBag.Title = "vPropiedades";
+}
+
+@section Dashboard {
+    <script src="~/Scripts/Views/vPropiedades.js"></script>
+
+    <div class="container">
+        <div class="row">
+            <div>
+                @Html.CtrlButton(viewName: "vPropiedades", id: "btnPropiedad", label: "Crear propiedad", onClickFunction: "CrearPropiedad", buttonType: "primary")
+            </div>
+            <div>
+
+            </div>
+            <div>
+                @Html.CtrlButton(viewName: "vPropiedades", id: "btnEspacio", label: "Crear espacio", onClickFunction: "CrearEspacio", buttonType: "primary")
+            </div>
+
+        </div>
+    </div>
+
+}

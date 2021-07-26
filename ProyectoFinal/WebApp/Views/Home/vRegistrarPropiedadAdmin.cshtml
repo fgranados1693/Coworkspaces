@@ -1,0 +1,47 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_LayoutForms.cshtml"; }
+@{ ViewBag.Title = "vRegistrarPropiedadAdmin"; }
+
+
+<!--Scripts-->
+<script src="~/Scripts/Views/MapConfiguration.js"></script>
+<script src="~/Scripts/Views/vRegistrarPropiedadAdmin.js"></script>
+<!--Style sheets-->
+<link href="~/Content/Project_Styles/RegistrarPropiedad.css" rel="stylesheet" />
+
+<div id="form" class="card border-secondary">
+    <div id="inside" class="card-body">
+        <h3>Registrar Propiedad</h3>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="bs-component">
+                    <form id="frmEdition">
+                        <select class="form-control" id="selectUsuarios">
+                            <option value="0">Seleccione el propietario</option>
+                        </select>
+                        @Html.CtrlInput(id: "Nombre", type: "text", idLabel: "nombre", label: "Nombre", columnDataName: "Nombre")
+                        @Html.CtrlInput(id: "Descripcion", type: "text", idLabel: "descripcion", label: "Descripción", columnDataName: "Descripcion")
+                        @Html.CtrlInput(id: "Latitud", type: "text", idLabel: "latitudLabel", label: "Latitud", columnDataName: "Latitud")
+                        @Html.CtrlInput(id: "Longitud", type: "text", idLabel: "longitudLabel", label: "Longitud", columnDataName: "Longitud")
+                        <h6>Ingrese la ubicación de la propiedad</h6>
+                    </form>
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+        <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+        <p id="alert_message"></p>
+        <p id="alert_message_pwd"></p>
+    </div>
+    <div id="inside" class="row pull-right">
+        <div id="button" class="col-md-4">
+            @Html.CtrlButton(viewName: "vRegistrarPropiedadAdmin", id: "btnCreate", label: "Guardar", onClickFunction: "Create", buttonType: "success")
+        </div>
+    </div>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtK55zgCHZ0oTUvAs7zAvj-sRcM4yMBY4&callback=initMap&libraries=&v=weekly"
+        async></script>

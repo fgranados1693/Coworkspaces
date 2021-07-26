@@ -1,0 +1,47 @@
+﻿@using WebApp.Helpers;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+    @{ ViewBag.Title = "vHorarios"; }
+@section Dashboard {
+    <script src="~/Scripts/Views/vHorarios.js"></script>
+
+
+    @Html.CtrlTable(viewName: "vHorarios", id: "tblHorarios", title: "Listado de horarios",
+        columnsTitle: "Id Horario, Id Espacio, Dia de la semana, Hora de inicio, Hora final", ColumnsDataName: "Id_Horario,Id_Espacio,Dia_Semana,Hora_Inicio,Hora_Fin",
+        onSelectFunction: "BindFields", colorHeader: "red")
+
+    <div class="card border-secondary" style="margin-top: 50px;">
+        <div class="card-header">
+            <div class="row pull-right">
+                <div class="col-md-8">Customer edition</div>
+                <div class="col-md-4">
+                    @Html.CtrlButton(viewName: "vHorarios", id: "btnCreate", label: "Guardar", onClickFunction: "Create", buttonType: "success")
+                    @Html.CtrlButton(viewName: "vHorarios", id: "btnUpdate", label: "Guardar cambios", onClickFunction: "Update", buttonType: "info")
+                    @Html.CtrlButton(viewName: "vHorarios", id: "btnDelete", label: "Eliminar", onClickFunction: "Delete", buttonType: "danger")
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="bs-component">
+                        <form id="frmEdition">
+                            @Html.CtrlInput(id: "txtIdHorario", type: "text", label: "Id Horario", columnDataName: "Id_Horario")
+                            @Html.CtrlInput(id: "txtIdEspacio", type: "text", label: "Id Espacio", columnDataName: "Id_Espacio")
+                            @Html.CtrlInput(id: "txtDiaSemana", type: "text", label: "Día de la semana", columnDataName: "Dia_Semana")
+                            @Html.CtrlInput(id: "txtHoraInicio", type: "datetime-local", label: "Hora de Inicio", columnDataName: "Hora_Inicio")
+                            @Html.CtrlInput(id: "txtHoraFin", type: "datetime-local", label: "Hora final", columnDataName: "Hora_Fin")
+
+                            @*  @Html.CtrlDropDown(id: "drpGender", label: "Gender", listId: "LST_GENERO")*@
+                            @* @Html.CtrlDropDown(id: "Best Friend", label: "Gender", listId: "LST_CUSTOMER")*@
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

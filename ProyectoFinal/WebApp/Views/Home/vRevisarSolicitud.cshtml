@@ -1,0 +1,57 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{
+    ViewBag.Title = "vRevisarSolicitud";
+}
+
+<!--Style sheets-->
+<link href="~/Content/Project_Styles/RevisarSolicitud.css" rel="stylesheet" />
+
+@section Dashboard {
+    <script src="~/Scripts/Views/vRevisarSolicitud.js"></script>
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <div>
+                    <h3>Revisar Solicitud</h3>
+                </div>
+
+                <form id="formMod" class="needs-validation">
+
+                    @Html.CtrlInput(idLabel: "lblEmail", id: "Email", type: "text", label: "Correo electrónico", columnDataName: "Email")
+                    @Html.CtrlInput(idLabel: "lblNombre", id: "Nombre", type: "text", label: "Nombre", columnDataName: "Nombre")
+                    @Html.CtrlInput(idLabel: "lblApellidos", id: "Apellidos", type: "text", label: "Apellidos", columnDataName: "Apellidos")
+                    @Html.CtrlInput(idLabel: "lblGenero", id: "Genero", type: "text", label: "Genero", columnDataName: "Genero")
+                    @Html.CtrlInput(idLabel: "lblTipo_Identificacion", id: "Tipo_Identificacion", type: "text", label: "Nombre", columnDataName: "Tipo_Identificacion")
+                    @Html.CtrlInput(idLabel: "lblIdentificacion", id: "Identificacion", type: "text", label: "Identificacion", columnDataName: "Identificacion")
+                    @Html.CtrlInput(idLabel: "lblTelefono", id: "Telefono", type: "text", label: "Telefono", columnDataName: "Telefono")
+                    @Html.CtrlInput(idLabel: "lblFecha_Creacion", id: "Fecha_Creacion", type: "text", label: "Fecha_Creacion", columnDataName: "Fecha_Creacion")
+                    @Html.CtrlInput(idLabel: "lblFecha_Nacimiento", id: "Fecha_Nacimiento", type: "text", label: "Fecha_Nacimiento", columnDataName: "Fecha_Nacimiento")
+
+                    <div class="visually-hidden">
+                        @Html.CtrlInput(idLabel: "lblId_Solicitud", id: "Id_Solicitud", type: "text", label: "Id_Solicitud", columnDataName: "Id_Solicitud")
+                    </div>
+
+                    <div>
+                        @Html.CtrlInput(idLabel: "lblId_Usuario", id: "Id_Usuario", type: "text", label: "Id_Usuario", columnDataName: "Id_Usuario")
+                    </div>
+
+                    <div class="visually-hidden">
+                        @Html.CtrlInput(idLabel: "lblRevisada", id: "Revisada", type: "text", label: "Revisada", columnDataName: "Revisada")
+                    </div>
+
+                    <div class="visually-hidden">
+                        @Html.CtrlInput(idLabel: "lblRespuesta", id: "Respuesta", type: "text", label: "Respuesta", columnDataName: "Respuesta")
+                    </div>
+
+                </form>
+                <div>
+                    @Html.CtrlButton(viewName: "vRevisarSolicitud", id: "btnMod", label: "Revisada", onClickFunction: "Mod", buttonType: "primary")
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

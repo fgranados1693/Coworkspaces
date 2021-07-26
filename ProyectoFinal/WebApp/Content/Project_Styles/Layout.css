@@ -1,0 +1,104 @@
+﻿body {
+    
+}
+
+.error {
+    border: 2px rgb(224, 47, 47) solid;
+}
+
+.hide-profile {
+    display: none;
+}
+
+/*--CONTENEDOR PRINCIPAL--*/
+.cnt {
+    padding-top: 20px;
+    display: -webkit-flex;
+    display: flex;
+    position: sticky;
+    height: 100vh;
+}
+
+/*--CONTENEDOR IZQUIERDO--*/
+.cnt-left {
+    width: 20%;
+    height: auto;
+    float: left;
+    padding: 15px;
+    /*border-right: 1px solid black;*/
+    /*background: #3498db;*/
+    flex-direction: column;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    /*
+    border: 1px solid black;
+    */
+    /*
+    background: rgb(2,167,225);
+    background: linear-gradient(90deg, rgba(2,167,225,1) 0%, rgba(0,221,255,1) 25%, rgba(0,225,255,1) 57%, rgba(23,206,233,1) 75%, rgba(2,176,230,1) 100%);
+    */
+}
+
+    .cnt-left i {
+        color: #3498db;
+    }
+
+/*
+.link-dash {
+    font-size: 17px;
+
+    margin-bottom: 10%;
+}*/
+
+.dash-link-cnt {
+    width: 110%;
+    height: 9%;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid black;
+    align-items: center;
+    padding-left: 20px;
+    /*width: 20%;*/
+}
+.dash-link-cnt:hover {
+    background: #3498db;
+}
+
+.dash-link-cnt:hover > i {
+    color: white;
+}
+.link-dash {
+    color: black;
+    font-size: 18px;
+}
+.link-dash:hover {
+    color: white;
+}
+.icon-dash {
+    color: black;
+    font-size: 18px;
+}
+
+/*--CONTENER DERECHO--*/
+.cnt-right {
+    width: 80%;
+    height: auto;
+    float: left;
+    padding: 15px;
+    padding-top: 30px;
+}
+
+/*PERFIL ESPACIO*/
+.carousel.carousel-fade .carousel-item {
+    /*display: block;
+    */
+    z-index: 0;
+    opacity: 0;
+    transition: opacity ease-out .5s;
+}
+
+    .carousel.carousel-fade .carousel-item.active {
+        opacity: 1 !important;
+    }

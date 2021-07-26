@@ -1,0 +1,97 @@
+﻿<!-- Background Image -->
+
+<script src="../../Content/Chart.min.js"></script>
+
+<div class="chart-container" style="position: relative; height:20vh; width:40vw">
+    <canvas id="-#Id-"></canvas>
+    <script>
+        
+
+        function getRandomColor() {
+
+            var letters = '0123456789ABCDEF'.split('');
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        
+
+
+        function InitializeChart(vData) {
+            console.log(vData);
+            var ctx = document.getElementById('-#Id-').getContext('2d');
+
+            var myChart = new Chart(ctx, {
+                type: '-#ChartType-',
+                data: {
+                    labels: [-#Labels-],
+                    datasets: [{
+                        label: '-#Title-',
+                        data: vData,
+                        backgroundColor: ['Red', 'Orange', 'Yellow', 'Green', 'Blue']
+                        //backgroundColor: [getRandomColor(), getRandomColor(), getRandomColor(), getRandomColor(), getRandomColor()]
+                        //backgroundColor: Object.values(Utils.CHART_COLORS),
+                    }]
+                },
+                
+                //REVISAR LOS TOOLTIPS PORQUE SOLO SALE EN NEGRO EN LA GRAFICA
+                options: {
+                    responsive: true,
+                    tooltips: {
+                        backgroundColor: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
+                        displayColors: true
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            display: true,
+                            backgroundColor: 'Red',
+                            displayColor: true
+                        },
+                        title: {
+                            display: true,
+                            text: '-#Title-'
+                        }
+                    }
+                }
+            });
+            /*
+            var myChart = new Chart(ctx, {
+                type: '-#ChartType-',
+                data: {
+                    labels: [-#Labels-],
+                    datasets: [{
+                        label: '-#Title-',
+                        data: vData,
+                        backgroundColor: ['Red', 'Orange', 'Yellow', 'Green', 'Blue']
+                        //backgroundColor: [getRandomColor(), getRandomColor(), getRandomColor(), getRandomColor(), getRandomColor()]
+                        //backgroundColor: Object.values(Utils.CHART_COLORS),
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: '-#Title-'
+                        }
+                    }
+                }
+            });
+            */
+        }
+
+        var view = new -#ViewName-();
+        if (view != undefined) {
+            view.-#OnLoadFunction-(InitializeChart);
+        }
+
+    </script>
+</div>

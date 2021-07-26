@@ -1,0 +1,49 @@
+﻿@using WebApp.Helpers;
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{
+    ViewBag.Title = "vResponderSolicitud";
+}
+
+
+@section Dashboard {
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <div>
+                    <h3>Responder Solicitud</h3>
+                </div>
+
+                <form id="formMod" class="needs-validation">
+
+                    <div class="visually-hidden">
+                        @Html.CtrlInput(idLabel: "lblId_Solicitud", id: "Id_Solicitud", type: "text", label: "Id_Solicitud", columnDataName: "Id_Solicitud")
+                    </div>
+
+                    <div class="visually-hidden">
+                        @Html.CtrlInput(idLabel: "lblId_Usuario", id: "Id_Usuario", type: "text", label: "Id_Usuario", columnDataName: "Id_Usuario")
+                    </div>
+
+                    <div class="visually-hidden">
+                        @Html.CtrlInput(idLabel: "lblRevisada", id: "Revisada", type: "text", label: "Revisada", columnDataName: "Revisada")
+                    </div>
+
+                    <div class="visually-hidden">
+                        @Html.CtrlInput(idLabel: "lblResultado", id: "Resultado", type: "text", label: "Resultado", columnDataName: "Resultado")
+                    </div>
+                </form>
+                <div>
+                    <br>
+                    <label>Seleccione la opcion que desear realizar con la solicitud anteriormente seleccionada</label>
+                    <br>
+                </div>
+                <div>
+                    <br>
+                    @Html.CtrlButton(viewName: "vResponderSolicitud", id: "btnMod", label: "Aprobar", onClickFunction: "ModAprobar", buttonType: "success")
+                    @Html.CtrlButton(viewName: "vResponderSolicitud", id: "btnMod", label: "Rechazar", onClickFunction: "ModRechazar", buttonType: "danger")
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

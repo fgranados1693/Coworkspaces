@@ -1,0 +1,44 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{
+    ViewBag.Title = "vListarUsuarios";
+}
+
+@section Dashboard {
+    <script src="~/Scripts/Views/vListarUsuarios.js"></script>
+    <link href="~/Content/Project_Styles/CustomDataTables.css" rel="stylesheet" />
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <h3>Usuarios</h3>
+                @*@Html.CtrlTable(viewName: "vListarUsuarios", id: "tblUsuarios", title: "Listado de usuarios",
+                    columnsTitle: "Nombre,Apellidos,Email,Telefono,Genero,Estado", ColumnsDataName: "Nombre,Apellidos,Email,Telefono,Genero,Estado",
+                    onSelectFunction: "BindFields", colorHeader: "red")*@
+
+                <table class="display custom-table" id="tblUsuarios">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Telefono</th>
+                            <th>Genero</th>
+                            <th>Estado</th>
+                            <th>Rol</th>
+                            <th></th>
+                            <th></th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="tblBodyUsuarios"></tbody>
+                </table>
+
+                <div>
+                    @Html.CtrlButton(viewName: "vListarUsuarios", id: "btnCre", label: "Nuevo usuario", onClickFunction: "Create", buttonType: "primary")
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

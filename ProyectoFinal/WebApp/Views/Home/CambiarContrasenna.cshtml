@@ -1,0 +1,29 @@
+﻿
+@using WebApp.Helpers;
+<script src="~/Scripts/Views/CambiarContrasenna.js"></script>
+@{
+    Layout = "~/Views/Shared/_LayoutForms.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <div>
+                <h4>Ingrese la nueva contraseña</h4>
+            </div>
+            <form id="formContrasenna">
+
+                @Html.CtrlInput(id: "txtContrasenna", type: "password", label: "Digite su nueva contraseña", columnDataName: "contrasenna")
+
+            </form>
+            <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                <span id="alert_message"></span>
+            </div>
+            <div>
+                @Html.CtrlButton(viewName: "cambiarContrasenna", id: "btnCreate", label: "Cambiar contraseña", onClickFunction: "Update", buttonType: "success")
+            </div>
+        </div>
+    </div>
+</div>

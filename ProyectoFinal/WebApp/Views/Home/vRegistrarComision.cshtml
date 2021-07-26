@@ -1,0 +1,42 @@
+﻿@using WebApp.Helpers;
+
+@{Layout = "~/Views/Shared/_LayoutForms.cshtml";}
+@{
+    ViewBag.Title = "vRegistrarComision";
+}
+
+    <script src="~/Scripts/Views/vRegistrarComision.js"></script>
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <div>
+                    <h5>Registro de Comisión</h5>
+                </div>
+
+                <form id="formMembresia" class="needs-validation">
+
+                    @Html.CtrlInput(idLabel: "lblComision_Admin", id: "Comision_Admin", type: "number", label: "Comision_Admin", columnDataName: "Comision_Admin")
+
+                    <div class="visually-hidden">
+                        @Html.CtrlInput(idLabel: "lblId_Membresia", id: "Id_Membresia", type: "text", label: "Id_Membresia", columnDataName: "Id_Membresia")
+                    </div>
+
+                    <div class="visually-hidden">
+                        @Html.CtrlInput(idLabel: "lblId_Usuario", id: "Id_Usuario", type: "text", label: "Id_Usuario", columnDataName: "Id_Usuario")
+                    </div>
+
+                    <div class="visually-hidden">
+                        @Html.CtrlInput(idLabel: "lblFecha_Ultimo_Pago", id: "Fecha_Ultimo_Pago", type: "text", label: "Fecha_Ultimo_Pago", columnDataName: "Fecha_Ultimo_Pago")
+                    </div>
+
+                </form>
+
+                <div>
+                    @Html.CtrlButton(viewName: "vRegistrarComision", id: "btnMod", label: "Guardar cambios", onClickFunction: "Mod", buttonType: "primary")
+                </div>
+            </div>
+        </div>
+    </div>
+
+

@@ -1,0 +1,71 @@
+﻿
+@using WebApp.Helpers;
+<link href="~/Content/Project_Styles/PagarReserva.css" rel="stylesheet" />
+<script src="~/Scripts/Views/PagarReserva.js"></script>
+@{
+    Layout = "~/Views/Shared/_LayoutForms.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <div>
+                <h4>Pago de reservas</h4>
+                <h5 id="saldo" class="margin-bottom-5">Tu saldo: CRC </h5>
+                <!--MOSTRAR LAS RESERVAS QUE SE SELECCIONARON-->
+                <div class="margin-bottom-2" id="titulo-pago-reserva">
+                    <h6>Reservas</h6>
+                </div>
+                
+                <div>
+                    <table class="table table-responsive margin-bottom-5" id="tblCarrito">
+                        <thead>
+                            <tr>
+                                <th>Espacio</th>
+                                <th>Fecha</th>
+                                <th>Hora Entrada</th>
+                                <th>Hora Salida</th>
+                                <th>Subtotal</th>
+                                <th></th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="tblBodyCarrito"></tbody>
+                    </table>
+
+                </div>
+
+                <table class="table margin-bottom-5" id="tabla-pago-reserva">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Subtotal</th>
+                            <td id="subtotal">CRC </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Impuestos</th>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td id="impuestos"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Total</th>
+                            <td id="total">CRC </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                <span id="alert_message"></span>
+            </div>
+            <div>
+                @Html.CtrlButton(viewName: "PagarReserva", id: "btnPagar", label: "Completar pago", onClickFunction: "Pagar", buttonType: "primary")
+                @Html.CtrlButton(viewName: "PagarReserva", id: "btnRecargar", label: "Recargar monedero", onClickFunction: "Recargar", buttonType: "primary")
+
+            </div>
+        </div>
+    </div>
+</div>

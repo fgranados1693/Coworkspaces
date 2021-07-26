@@ -1,0 +1,34 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{
+    ViewBag.Title = "vListarMembresias";
+}
+
+@section Dashboard {
+
+    <link href="~/Content/Project_Styles/CustomDataTables.css" rel="stylesheet" />
+
+    <!--Scripts-->
+    <script src="~/Scripts/Views/vListarMembresias.js"></script>
+
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                <h5>Listado de Membresias</h5>
+
+                <table class="display custom-table" id="tblMembresias">
+                    <thead>
+                        <tr>
+                            <th>Id_Usuario</th>
+                            <th>Fecha_Ultimo_Pago</th>
+                            <th>Comision</th>
+                            <th>Asignar Comision</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblBodyMembresias"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}

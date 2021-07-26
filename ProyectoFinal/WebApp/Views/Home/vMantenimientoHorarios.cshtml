@@ -1,0 +1,55 @@
+﻿@using WebApp.Helpers;
+@{ Layout = "~/Views/Shared/_Layout.cshtml";}
+@{ ViewBag.Title = "vMantenimientoHorarios"; }
+
+@section Dashboard {
+
+
+    <script src="~/Scripts/Views/vMantenimientoHorarios.js"></script>
+    <div class="text-center">
+        <h2>Mantenimiento de horarios</h2>
+    </div>
+        @Html.CtrlTable(viewName: "vMantenimientoHorarios", id: "tblHorarios", title: "Listado de horarios",
+            columnsTitle: "Id Horario, Id Espacio, Dia de la semana, Hora de inicio, Hora final", ColumnsDataName: "Id_Horario,Id_Espacio,Dia_Semana,Hora_Inicio,Hora_Fin",
+            onSelectFunction: "BindFields", colorHeader: "red")
+    <div class="card border-secondary" style="margin-top: 50px;">
+        <div class="card-header">
+            <div class="row pull-right">
+                <div class="col-md-8">Edición de horarios</div>
+                <div class="col-md-4">
+                    @Html.CtrlButton(viewName: "vMantenimientoHorarios", id: "btnCreate", label: "Guardar", onClickFunction: "Create", buttonType: "primary")
+                    @Html.CtrlButton(viewName: "vMantenimientoHorarios", id: "btnUpdate", label: "Modificar", onClickFunction: "Update", buttonType: "primary")
+                    @Html.CtrlButton(viewName: "vMantenimientoHorarios", id: "btnDelete", label: "Eliminar", onClickFunction: "Delete", buttonType: "primary")
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="bs-component">
+                        <form id="frmEdition">
+                            <div class="visually-hidden">
+                                @Html.CtrlInput(id: "IdHorario", type: "text", label: "Id Horario", columnDataName: "Id_Horario", idLabel: "labelHorario")
+                                @Html.CtrlInput(id: "IdEspacio", type: "text", label: "Id Espacio", columnDataName: "Id_Espacio", idLabel: "labelEspacio")
+                            </div>
+                            
+                            @* @@Html.CtrlInput(id: "Dia_Semana", type: "text", label: "Día de la semana", columnDataName: "Dia_Semana")*@
+                            @Html.CtrlDropDown(id: "Dia_Semana", label: "Día de la semana", listId: "LST_DIA_DE_SEMANA", columnDataName: "Dia_Semana", placeHolder: "Selecciona el día de la semana")
+                            @Html.CtrlInput(id: "Hora_Inicio", type: "time", label: "Hora de Inicio", columnDataName: "Hora_Inicio")
+                            @Html.CtrlInput(id: "Hora_Fin", type: "time", label: "Hora final", columnDataName: "Hora_Fin")
+
+                            @*  @Html.CtrlDropDown(id: "drpGender", label: "Gender", listId: "LST_GENERO")*@
+                            @* @Html.CtrlDropDown(id: "Best Friend", label: "Gender", listId: "LST_CUSTOMER")*@
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Alertas-->
+        <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+            <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+            <p id="alert_message"></p>
+            <p id="alert_message_pwd"></p>
+        </div>
+    </div>
+}

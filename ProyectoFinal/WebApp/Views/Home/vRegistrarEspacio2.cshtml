@@ -1,0 +1,96 @@
+﻿
+@using WebApp.Helpers;
+<link href="~/Content/Project_Styles/RegistrarEspacio2.css" rel="stylesheet" />
+
+@{
+    Layout = "~/Views/Shared/_LayoutForms.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <div>
+                <h5>Registro de nuevo espacio</h5>
+
+            </div>
+            <form id="formEspacio1" class="needs-validation">
+
+                <!--<input type='time' step="3600" >-->
+                @Html.CtrlInput(idLabel: "lblTiempoCancelacion", id: "TiempoCancelacion", type: "number", label: "Tiempo mínimo previo a cancelación (en minutos)", columnDataName: "TiempoCancelacion")
+                @Html.CtrlInput(idLabel: "lblTiempoReserva", id: "TiempoReserva", type: "number", label: "Tiempo de cada reserva (en minutos)", columnDataName: "TiempoReserva")
+                @Html.CtrlInput(idLabel: "lblMensajeReserva", id: "MensajeReserva", type: "text", label: "Ingresar mensaje que se le mostrará al usuario cuando entre a la reservación una vez que escanee el código QR.", columnDataName: "MensajeReserva")
+
+                <label id="lbl-dias-apertura">Días de apertura</label><br>
+                <input class="checkDias" type="checkbox" id="Lunes" columnDataName="Lunes" name="Lunes" value="Lunes" />
+                <label for="Lunes">Lunes</label><br>
+
+                <input class="checkDias" type="checkbox" id="Martes" columnDataName="Martes" name="Martes" value="Martes" />
+                <label for="Martes">Martes</label><br>
+
+                <input class="checkDias" type="checkbox" id="Miercoles" columnDataName="Miercoles" name="Miercoles" value="Miercoles" />
+                <label for="Miércoles">Miercoles</label><br>
+
+                <input class="checkDias" type="checkbox" id="Jueves" columnDataName="Jueves" name="Jueves" value="Jueves" />
+                <label for="Jueves">Jueves</label><br>
+
+                <input class="checkDias" type="checkbox" id="Viernes" columnDataName="Viernes" name="Viernes" value="Viernes" />
+                <label for="Viernes">Viernes</label><br>
+
+                <input class="checkDias" type="checkbox" id="Sabado" columnDataName="Sabado" name="Sabado" value="Sabado" />
+                <label for="Sábado">Sábado</label><br>
+
+                <input class="checkDias" type="checkbox" id="Domingo" columnDataName="Domingo" name="Domingo" value="Domingo" />
+                <label for="Domingo">Domingo</label><br>
+
+                <label for="dias">Seleccione el día para asignarle un horario</label><br>
+                <select name="dias" id="select-dias" columnDataName="Dia" required>
+                    <option value="" selected>Seleccione el día</option>
+                </select>
+
+                <div id="inputs-horario">
+                    @Html.CtrlInput(idLabel: "lblHoraAperturaLunes", id: "HoraAperturaLunes", type: "time", label: "Hora de apertura", columnDataName: "HoraAperturaLunes")
+                    @Html.CtrlInput(idLabel: "lblHoraCierreLunes", id: "HoraCierreLunes", type: "time", label: "Hora de cierre", columnDataName: "HoraCierreLunes")
+
+                    @Html.CtrlInput(idLabel: "lblHoraAperturaMartes", id: "HoraAperturaMartes", type: "time", label: "Hora de apertura", columnDataName: "HoraAperturaMartes")
+                    @Html.CtrlInput(idLabel: "lblHoraCierreMartes", id: "HoraCierreMartes", type: "time", label: "Hora de cierre", columnDataName: "HoraCierreMartes")
+
+
+                    @Html.CtrlInput(idLabel: "lblHoraAperturaMiercoles", id: "HoraAperturaMiercoles", type: "time", label: "Hora de apertura", columnDataName: "HoraAperturaMiercoles")
+                    @Html.CtrlInput(idLabel: "lblHoraCierreMiercoles", id: "HoraCierreMiercoles", type: "time", label: "Hora de cierre", columnDataName: "HoraCierreMiercoles")
+
+                    @Html.CtrlInput(idLabel: "lblHoraAperturaJueves", id: "HoraAperturaJueves", type: "time", label: "Hora de apertura", columnDataName: "HoraAperturaJueves")
+                    @Html.CtrlInput(idLabel: "lblHoraCierreJueves", id: "HoraCierreJueves", type: "time", label: "Hora de cierre", columnDataName: "HoraCierreJueves")
+
+                    @Html.CtrlInput(idLabel: "lblHoraAperturaViernes", id: "HoraAperturaViernes", type: "time", label: "Hora de apertura", columnDataName: "HoraAperturaViernes")
+                    @Html.CtrlInput(idLabel: "lblHoraCierreViernes", id: "HoraCierreViernes", type: "time", label: "Hora de cierre", columnDataName: "HoraCierreViernes")
+
+                    @Html.CtrlInput(idLabel: "lblHoraAperturaSabado", id: "HoraAperturaSabado", type: "time", label: "Hora de apertura", columnDataName: "HoraAperturaSabado")
+                    @Html.CtrlInput(idLabel: "lblHoraCierreSabado", id: "HoraCierreSabado", type: "time", label: "Hora de cierre", columnDataName: "HoraCierreSabado")
+
+                    @Html.CtrlInput(idLabel: "lblHoraAperturaDomingo", id: "HoraAperturaDomingo", type: "time", label: "Hora de apertura", columnDataName: "HoraAperturaDomingo")
+                    @Html.CtrlInput(idLabel: "lblHoraCierreDomingo", id: "HoraCierreDomingo", type: "time", label: "Hora de cierre", columnDataName: "HoraCierreDomingo")
+
+                </div>
+
+                <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                    <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                    <p id="alert_message"></p>
+                    <p id="alert_message_tiempo"></p>
+                    <p id="alert_message_horario"></p>
+                    <p id="alert_message_inp_dias"></p>
+                    <p id="alert_message_inp_dias2"></p>
+                    <p id="alert_message_hor_dias"></p>
+                </div>
+
+                <div>
+                    @Html.CtrlButton(viewName: "vRegistroEspacio2", id: "btnRegistrar", label: "Registrar", onClickFunction: "Registrar", buttonType: "primary")
+                </div>
+
+            </form>
+            
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/Views/vRegistroEspacio2.js"></script>

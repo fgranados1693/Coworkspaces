@@ -1,0 +1,23 @@
+﻿.class-img {
+    display: flex;
+    flex-direction: column;
+}
+
+#upload_widget {
+    margin-top: 1%;
+    width: 13%;
+    padding: 8px 17.6px;
+}
+
+.error-color {
+    color: red;
+}
+
+.valid {
+    border: 1px solid green;
+}
+
+
+#select-propiedades {
+    width: 25%;
+}

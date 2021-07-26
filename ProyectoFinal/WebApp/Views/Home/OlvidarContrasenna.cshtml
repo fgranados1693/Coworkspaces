@@ -1,0 +1,31 @@
+﻿@using WebApp.Helpers;
+<script src="~/Scripts/Views/OlvidarContrasenna.js"></script>
+
+@{
+    Layout = "~/Views/Shared/_LayoutForms.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col align-self-center">
+            <div>
+                <h1 id="hd">Olvido de contraseña</h1>
+                <p id="desc">Te enviaremos un correo electrónico con un código que podrás ingresar para reestablecer la contraseña</p>
+            </div>
+            <form id="formEmail">
+                @Html.CtrlInput(id: "txtEmail", type: "email", label: "Correo electrónico", columnDataName: "email", placeHolder: "Ingrese su dirección de correo electrónico")
+
+            </form>
+            <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+                <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+                <span id="alert_message"></span>
+            </div>
+            <div>
+                @Html.CtrlButton(viewName: "vIngresarEmail", id: "btnEnviar", label: "Enviar", onClickFunction: "Enviar", buttonType: "success")
+            </div>
+        </div>
+    </div>
+</div>
+
+

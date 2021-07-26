@@ -1,0 +1,48 @@
+﻿@using WebApp.Helpers;
+
+@{ Layout = "~/Views/Shared/_LayoutForms.cshtml"; }
+@{ ViewBag.Title = "vModificarPropiedad"; }
+
+    <!--Scripts-->
+    <script src="~/Scripts/Views/MapConfiguration.js"></script>
+    <script src="~/Scripts/Views/vModificarPropiedad.js"></script>
+    <!--Style sheets-->
+    <link href="~/Content/Project_Styles/RegistrarPropiedad.css" rel="stylesheet" />
+
+    <div id="form" class="card border-secondary">
+        <div id="inside" class="card-body">
+            <h3>Modificar Propiedad</h3>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="bs-component">
+                        <form id="frmModificarPropiedad">
+                            @Html.CtrlInput(id: "Nombre", type: "text", idLabel: "", label: "Nombre", columnDataName: "Nombre")
+                            @Html.CtrlInput(id: "Descripcion", type: "text", idLabel: "", label: "Descripción", columnDataName: "Descripcion")
+                            @Html.CtrlInput(id: "Latitud", type: "text", idLabel: "latitudLabel", label: "Latitud", columnDataName: "Latitud")
+                            @Html.CtrlInput(id: "Longitud", type: "text", idLabel: "longitudLabel", label: "Longitud", columnDataName: "Longitud")                          
+                            
+                            <div id="EstadoCont">
+                                @Html.CtrlDropDown(id: "Estado", label: "Estado", listId: "LST_ESTADO_PROPIEDADES", columnDataName: "Estado", placeHolder: "Seleccione una opción")
+                            </div>
+                            <h6>Ingrese la ubicación de la propiedad</h6>
+                        </form>
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-success alert-dismissable" style="display: none" id="alert_container">
+            <button type="button" class="close" onclick="$('.alert').hide()">&times;</button>
+            <p id="alert_message"></p>
+            <p id="alert_message_pwd"></p>
+        </div>
+        <div id="inside" class="row pull-right">
+            <div id="button" class="col-md-4">
+                @Html.CtrlButton(viewName: "vModificarPropiedad", id: "btnUpdate", label: "Modificar", onClickFunction: "Mod", buttonType: "success")
+            </div>
+        </div>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARVlNp3BK-ZjF0uCbQTLYw6R-ceMYe3q4&callback=initMap&libraries=&v=weekly"
+            async></script>
+
